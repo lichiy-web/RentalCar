@@ -1,7 +1,7 @@
 import css from './Loader.module.css';
 import { RotatingLines } from 'react-loader-spinner';
 
-const Loader = ({ isLoading, strokeColor = '#000000' }) => {
+const Loader = ({ isLoading = true, strokeColor = '#000000' }) => {
   return (
     <div className={css.loader}>
       <RotatingLines
