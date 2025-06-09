@@ -1,19 +1,17 @@
 import css from './Loader.module.css';
-import { RotatingLines } from 'react-loader-spinner';
+import { ThreeCircles } from 'react-loader-spinner';
 
-const Loader = ({ isLoading = true, strokeColor = '#000000' }) => {
+const Loader = ({ isLoading = true, strokeColor = '#0B44CD' }) => {
   return (
     <div className={css.loader}>
-      <RotatingLines
+      <ThreeCircles
         visible={isLoading}
         height="100%"
         width="100%"
-        strokeColor={strokeColor}
-        strokeWidth="5"
-        animationDuration="0.75"
-        ariaLabel="rotating-lines-loading"
-        // wrapperStyle={{}}
-        // wrapperClass=""
+        color={strokeColor}
+        ariaLabel="three-circles-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
       />
     </div>
   );
