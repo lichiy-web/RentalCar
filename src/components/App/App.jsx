@@ -10,13 +10,7 @@ const CatalogTab = lazy(() => import('../CatalogTab/CatalogTab'));
 const CarTab = lazy(() => import('../CarTab/CarTab'));
 
 function App() {
-  const isLoading = false;
-
-  return isLoading ? (
-    <>
-      <Loader />
-    </>
-  ) : (
+  return (
     <div className="app-container">
       <Suspense fallback={<Loader />}>
         <Routes>

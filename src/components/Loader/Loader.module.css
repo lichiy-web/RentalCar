@@ -1,7 +1,7 @@
 .loader {
-    width: 5em;
-    /* height: 2em; */
+    width: 5rem;
     position: fixed;
-    top: calc(50vh - .5em);
-    margin: auto;
+    top: calc(50vh - 2.5rem);
+    left: calc(50vw - 2.5rem);
+    z-index: 1000;
 }
