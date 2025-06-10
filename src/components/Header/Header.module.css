@@ -1,0 +1,14 @@
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    justify-content: space-between;
+    background-color: var(--header-back);        
+}
+
+.headerContent {
+    height: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+}

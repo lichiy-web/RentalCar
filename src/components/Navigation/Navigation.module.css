@@ -1,0 +1,33 @@
+.navigation {
+    margin-right: 7.5em;
+}
+
+.navList {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+.navItem {
+    display: flex;
+}
+
+.link {
+    font-weight: 500;
+    font-family: var(--font-family);
+    color: var(--black);
+    text-decoration: none;
+    line-height: 1.25;
+    text-align: center;
+}
+
+.link:hover {
+    color: var(--button);
+}
+
+.link.active {
+    text-decoration: underline;
+}
+

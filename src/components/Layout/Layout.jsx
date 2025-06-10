@@ -11,12 +11,13 @@ const Layout = () => {
   const error = useSelector(selectError);
 
   return (
-    <main className={css.mainContainer}>
+    <>
       <Header />
-      {error ? <ErrorMessage /> : <Outlet />}
-
+      <main className={css.mainContainer}>
+        {error ? <ErrorMessage /> : <Outlet />}
+      </main>
       <Loader isLoading={isLoading} />
-    </main>
+    </>
   );
 };
 export default Layout;
