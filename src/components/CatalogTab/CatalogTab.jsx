@@ -6,6 +6,9 @@ import {
   fetchCar,
   fetchCars,
 } from '../../redux/catalog/operations';
+import CatalogControl from '../CatalogControl/CatalogControl';
+import CarTable from '../CarTable/CarTable';
+import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
 
 const CatalogTab = () => {
   const dispatch = useDispatch();
@@ -13,7 +16,7 @@ const CatalogTab = () => {
     const abortController = new AbortController();
     dispatch(
       fetchCars({
-        perPage: 3,
+        perPage: 12,
         page: 1,
         // brand: 'BMW',
         // rentalPrice: 40,
@@ -35,7 +38,9 @@ const CatalogTab = () => {
   }, [dispatch]);
   return (
     <div className={css.catalogTabContainer}>
-      <h1>CatalogTab</h1>
+      <CarTable />
+      <CatalogControl />
+      <LoadMoreBtn />
     </div>
   );
 };

@@ -5,7 +5,6 @@ const initialState = {
   rentalPrice: null,
   minMileage: null,
   maxMileage: null,
-  favorite: [],
 };
 
 const slice = createSlice({

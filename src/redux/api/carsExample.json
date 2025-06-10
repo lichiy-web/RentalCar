@@ -1,0 +1,367 @@
+{
+    "cars": [
+        {
+            "id": "11a3ab35-07b8-4336-b06b-602cdc309f2c",
+            "year": 2008,
+            "brand": "Buick",
+            "model": "Enclave",
+            "type": "SUV",
+            "img": "https://ac.goit.global/car-rental-task/9582-ai.jpg",
+            "description": "The Buick Enclave is a stylish and spacious SUV known for its comfortable ride and luxurious features.",
+            "fuelConsumption": "10.5",
+            "engineSize": "3.6L V6",
+            "accessories": [
+                "Leather seats",
+                "Panoramic sunroof",
+                "Premium audio system"
+            ],
+            "functionalities": [
+                "Power liftgate",
+                "Remote start",
+                "Blind-spot monitoring"
+            ],
+            "rentalPrice": "40",
+            "rentalCompany": "Luxury Car Rentals",
+            "address": "123 Example Street, Kiev, Ukraine",
+            "rentalConditions": [
+                "Minimum age: 25",
+                "Valid driver's license",
+                "Security deposit required"
+            ],
+            "mileage": 5858
+        },
+        {
+            "id": "324710c7-afe3-4e17-aba4-07e2b278179d",
+            "year": 2019,
+            "brand": "Volvo",
+            "model": "XC90",
+            "type": "SUV",
+            "img": "https://ac.goit.global/car-rental-task/9584-ai.jpg",
+            "description": "The Volvo XC90 is a premium SUV that offers exceptional safety, advanced technology, and elegant design.",
+            "fuelConsumption": "8.3",
+            "engineSize": "2.0L 4-cylinder",
+            "accessories": [
+                "Nappa leather seats",
+                "Bowers & Wilkins premium sound system",
+                "Head-up display"
+            ],
+            "functionalities": [
+                "IntelliSafe advanced safety features",
+                "Pilot Assist semi-autonomous driving",
+                "Four-zone automatic climate control"
+            ],
+            "rentalPrice": "50",
+            "rentalCompany": "Premium Auto Rentals",
+            "address": "456 Example Avenue, Lviv, Ukraine",
+            "rentalConditions": [
+                "Minimum age: 21",
+                "Valid driver's license",
+                "Proof of insurance required"
+            ],
+            "mileage": 5352
+        },
+        {
+            "id": "5ed1cf8e-d493-459e-9cc6-1a1ca22a1900",
+            "year": 2020,
+            "brand": "Volvo",
+            "model": "XC60",
+            "type": "SUV",
+            "img": "https://ac.goit.global/car-rental-task/9586-ai.jpg",
+            "description": "The Volvo XC60 is a compact luxury SUV with a beautiful interior, strong performance, and advanced safety features.",
+            "fuelConsumption": "7.9",
+            "engineSize": "2.0L 4-cylinder",
+            "accessories": [
+                "Premium leather seats",
+                "Harman Kardon audio system",
+                "Hands-free power tailgate"
+            ],
+            "functionalities": [
+                "City Safety collision avoidance technology",
+                "Pilot Assist with adaptive cruise control",
+                "9-inch Sensus touchscreen infotainment system"
+            ],
+            "rentalPrice": "40",
+            "rentalCompany": "Luxury Car Rentals",
+            "address": "789 Example Boulevard, Odessa, Ukraine",
+            "rentalConditions": [
+                "Minimum age: 23",
+                "Valid driver's license",
+                "Credit card required"
+            ],
+            "mileage": 5966
+        },
+        {
+            "id": "e7ffb97e-9fe4-44f1-ae73-34e308afa82d",
+            "year": 2006,
+            "brand": "HUMMER",
+            "model": "H2",
+            "type": "SUV",
+            "img": "https://ac.goit.global/car-rental-task/9587-ai.jpg",
+            "description": "The HUMMER H2 is a rugged and powerful SUV that stands out with its imposing presence and off-road capabilities.",
+            "fuelConsumption": "19.8",
+            "engineSize": "6.0L V8",
+            "accessories": [
+                "Heated leather seats",
+                "Bose premium sound system",
+                "Off-road package"
+            ],
+            "functionalities": [
+                "Electronic locking front and rear differentials",
+                "Stabilitrak stability control",
+                "Tire pressure monitoring system"
+            ],
+            "rentalPrice": "50",
+            "rentalCompany": "Adventure Car Rentals",
+            "address": "321 Example Road, Kharkiv, Ukraine",
+            "rentalConditions": [
+                "Minimum age: 25",
+                "Valid driver's license",
+                "Security deposit required"
+            ],
+            "mileage": 4771
+        },
+        {
+            "id": "a57f5544-e771-439d-bf32-06fe429b6352",
+            "year": 2016,
+            "brand": "Subaru",
+            "model": "Outback",
+            "type": "SUV",
+            "img": "https://ac.goit.global/car-rental-task/9590-ai.jpg",
+            "description": "The Subaru Outback is a versatile and reliable SUV that combines off-road capability with a comfortable and spacious interior.",
+            "fuelConsumption": "8.7",
+            "engineSize": "2.5L 4-cylinder",
+            "accessories": [
+                "Leather upholstery",
+                "Power moonroof",
+                "Harman Kardon premium audio system"
+            ],
+            "functionalities": [
+                "Symmetrical All-Wheel Drive",
+                "X-Mode off-road assist",
+                "Subaru EyeSight driver-assist system"
+            ],
+            "rentalPrice": "30",
+            "rentalCompany": "Adventure Car Rentals",
+            "address": "987 Example Street, Kyiv, Ukraine",
+            "rentalConditions": [
+                "Minimum age: 21",
+                "Valid driver's license",
+                "Credit card required"
+            ],
+            "mileage": 4061
+        },
+        {
+            "id": "aaa71091-8237-4603-a647-067bb9a1decc",
+            "year": 2010,
+            "brand": "Mitsubishi",
+            "model": "Outlander",
+            "type": "SUV",
+            "img": "https://ac.goit.global/car-rental-task/9591-ai.jpg",
+            "description": "The Mitsubishi Outlander is a practical and fuel-efficient SUV with a stylish design and a range of modern features.",
+            "fuelConsumption": "7.9",
+            "engineSize": "2.4L 4-cylinder",
+            "accessories": [
+                "Heated front seats",
+                "Rockford Fosgate premium audio system",
+                "Power liftgate"
+            ],
+            "functionalities": [
+                "Super All-Wheel Control",
+                "Multi-View camera system",
+                "Bluetooth hands-free system"
+            ],
+            "rentalPrice": "30",
+            "rentalCompany": "City Car Rentals",
+            "address": "654 Example Avenue, Lviv, Ukraine",
+            "rentalConditions": [
+                "Minimum age: 21",
+                "Valid driver's license",
+                "Proof of insurance required"
+            ],
+            "mileage": 5374
+        },
+        {
+            "id": "5ef1417b-0b04-465b-9abe-f320a9c499bf",
+            "year": 2014,
+            "brand": "Nissan",
+            "model": "Pathfinder",
+            "type": "SUV",
+            "img": "https://ac.goit.global/car-rental-task/9593-ai.jpg",
+            "description": "The Nissan Pathfinder is a versatile and family-friendly SUV that offers a comfortable ride and generous cargo space.",
+            "fuelConsumption": "9.5",
+            "engineSize": "3.5L V6",
+            "accessories": [
+                "Tri-Zone Automatic Climate Control",
+                "Bose premium audio system",
+                "Rear-seat entertainment system"
+            ],
+            "functionalities": [
+                "Intelligent 4x4 system",
+                "Advanced Drive-Assist Display",
+                "Nissan Intelligent Key with push-button ignition"
+            ],
+            "rentalPrice": "40",
+            "rentalCompany": "Luxury Car Rentals",
+            "address": "321 Example Road, Odessa, Ukraine",
+            "rentalConditions": [
+                "Minimum age: 25",
+                "Valid driver's license",
+                "Security deposit required"
+            ],
+            "mileage": 6282
+        },
+        {
+            "id": "5c6891c2-2a56-4e88-9d76-92eb5ab88b1e",
+            "year": 2009,
+            "brand": "Lincoln",
+            "model": "Navigator L",
+            "type": "SUV",
+            "img": "https://ac.goit.global/car-rental-task/9596-ai.jpg",
+            "description": "The Lincoln Navigator L is a luxurious and spacious SUV with a refined interior and advanced technology features.",
+            "fuelConsumption": "18.2",
+            "engineSize": "5.4L V8",
+            "accessories": [
+                "Premium leather seats",
+                "THX II Certified audio system",
+                "Power-deployable running boards"
+            ],
+            "functionalities": [
+                "AdvanceTrac with Roll Stability Control",
+                "Voice-Activated Navigation System",
+                "Power liftgate"
+            ],
+            "rentalPrice": "50",
+            "rentalCompany": "Elite Car Rentals",
+            "address": "123 Example Boulevard, Kharkiv, Ukraine",
+            "rentalConditions": [
+                "Minimum age: 25",
+                "Valid driver's license",
+                "Insurance coverage required"
+            ],
+            "mileage": 6173
+        },
+        {
+            "id": "fd06d36e-5f38-42a5-b323-8ebefa3bac99",
+            "year": 2000,
+            "brand": "GMC",
+            "model": "Yukon Denali",
+            "type": "SUV",
+            "img": "https://ac.goit.global/car-rental-task/9597-ai.jpg",
+            "description": "The GMC Yukon Denali is a full-size luxury SUV that offers a powerful engine, a comfortable and spacious interior, and a host of advanced features.",
+            "fuelConsumption": "14.5",
+            "engineSize": "6.0L V8",
+            "accessories": [
+                "Heated and ventilated front seats",
+                "BOSE premium sound system",
+                "Power-folding third-row seats"
+            ],
+            "functionalities": [
+                "All-Wheel Drive",
+                "Adaptive suspension",
+                "Advanced safety features"
+            ],
+            "rentalPrice": "40",
+            "rentalCompany": "Premium Car Rentals",
+            "address": "789 Example Square, Dnipro, Ukraine",
+            "rentalConditions": [
+                "Minimum age: 25",
+                "Valid driver's license",
+                "Security deposit required"
+            ],
+            "mileage": 4989
+        },
+        {
+            "id": "5a995d1d-3432-4bf8-b88d-f730f01b9688",
+            "year": 2007,
+            "brand": "Hyundai",
+            "model": "Tucson",
+            "type": "SUV",
+            "img": "https://ac.goit.global/car-rental-task/9598-ai.jpg",
+            "description": "The Hyundai Tucson is a reliable and fuel-efficient SUV that combines practicality with a stylish design and a comfortable ride.",
+            "fuelConsumption": "8.2",
+            "engineSize": "2.0L 4-cylinder",
+            "accessories": [
+                "Apple CarPlay and Android Auto integration",
+                "Blind Spot Detection",
+                "Hands-free smart liftgate"
+            ],
+            "functionalities": [
+                "Front-Wheel Drive",
+                "Hillstart Assist Control",
+                "LED headlights"
+            ],
+            "rentalPrice": "30",
+            "rentalCompany": "Economy Car Rentals",
+            "address": "456 Example Lane, Zaporizhzhia, Ukraine",
+            "rentalConditions": [
+                "Minimum age: 21",
+                "Valid driver's license",
+                "Credit card required"
+            ],
+            "mileage": 4591
+        },
+        {
+            "id": "72883b63-f036-4f92-a081-24ef527a6c01",
+            "year": 2006,
+            "brand": "MINI",
+            "model": "Convertible",
+            "type": "Convertible",
+            "img": "https://ac.goit.global/car-rental-task/9583-ai.jpg",
+            "description": "The MINI Convertible is a compact and fun-to-drive convertible that offers a unique and iconic design, agile handling, and an open-air driving experience.",
+            "fuelConsumption": "6.9",
+            "engineSize": "1.6L 4-cylinder",
+            "accessories": [
+                "Convertible soft top",
+                "Sport seats",
+                "MINI Connected infotainment system"
+            ],
+            "functionalities": [
+                "Front-Wheel Drive",
+                "Dynamic Stability Control",
+                "Rain-sensing wipers"
+            ],
+            "rentalPrice": "30",
+            "rentalCompany": "Fun Car Rentals",
+            "address": "234 Example Place, Vinnytsia, Ukraine",
+            "rentalConditions": [
+                "Minimum age: 21",
+                "Valid driver's license",
+                "Proof of insurance required"
+            ],
+            "mileage": 6275
+        },
+        {
+            "id": "bca12fb6-9427-4c85-88c3-1339f1b1ba9f",
+            "year": 2007,
+            "brand": "Bentley",
+            "model": "Azure",
+            "type": "Convertible",
+            "img": "https://ac.goit.global/car-rental-task/9606-ai.jpg",
+            "description": "The Bentley Azure is a luxurious and prestigious convertible that combines exceptional craftsmanship, powerful performance, and sophisticated elegance.",
+            "fuelConsumption": "22.5",
+            "engineSize": "6.8L V8",
+            "accessories": [
+                "Mulliner Driving Specification",
+                "Naim for Bentley premium audio system",
+                "Heated steering wheel"
+            ],
+            "functionalities": [
+                "Rear-Wheel Drive",
+                "Air suspension",
+                "Automatic convertible roof"
+            ],
+            "rentalPrice": "80",
+            "rentalCompany": "Luxury Car Rentals",
+            "address": "567 Example Street, Lviv, Ukraine",
+            "rentalConditions": [
+                "Minimum age: 30",
+                "Valid driver's license",
+                "Security deposit and insurance required"
+            ],
+            "mileage": 4317
+        }
+    ],
+    "totalCars": 25,
+    "page": "1",
+    "totalPages": 3
+}

@@ -1,0 +1,11 @@
+button.loadMoreBtn {
+    margin-top: 1.5rem;
+    padding: .75rem 3.25rem;
+    background-color: transparent;
+    border: 1px solid var(--button);
+    color: var(--black)
+}
+
+button.loadMoreBtn:hover {
+    border: 1px solid var(--button-hover);    
+}

@@ -9,7 +9,10 @@ export const fetchCars = createAsyncThunk(
     console.log({ query });
     return appApi
       .get(`/cars${query}`, { signal })
-      .then(({ data }) => data)
+      .then(({ data }) => {
+        data.perPage = queryParams?.limit;
+        return data;
+      })
       .catch(error => thunkAPI.rejectWithValue(error.message));
   }
 );

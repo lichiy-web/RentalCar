@@ -10,6 +10,7 @@ const handleReject = (state, { payload: error }) => {
   if (error === 'canceled') return state;
   state.error = error;
 };
+const defaultPerPage = 12;
 
 const initialState = {
   cars: [],
@@ -17,9 +18,11 @@ const initialState = {
   isLoading: null,
   error: null,
   paginationData: {
+    perPage: defaultPerPage,
     page: 1,
     totalCars: null,
     totalPages: null,
+    hasNextPage: null,
   },
   car: null,
 };
@@ -32,12 +35,21 @@ const slice = createSlice({
       .addCase(fetchCars.pending, handlePending)
       .addCase(
         fetchCars.fulfilled,
-        (state, { payload: { cars, ...paginationData } }) => {
-          console.log({ catalog: { cars, paginationData } });
+        (
+          state,
+          { payload: { cars, page, perPage, totalCars, totalPages } }
+        ) => {
+          console.log({
+            catalog: { cars, page, perPage, totalCars, totalPages },
+          });
           state.isLoading = false;
           state.error = null;
-          state.cars = cars;
-          state.paginationData = paginationData;
+          state.cars.concat(cars);
+          state.paginationData.page = Number(page);
+          state.paginationData.perPage = Number(perPage) || defaultPerPage;
+          state.paginationData.totalPages = Number(totalPages);
+          state.paginationData.totalCars = Number(totalCars);
+          state.paginationData.hasNextPage = Number(page) < Number(totalPages);
         }
       )
       .addCase(fetchCars.rejected, handleReject)

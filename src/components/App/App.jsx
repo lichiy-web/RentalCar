@@ -4,10 +4,11 @@ import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import HomeTab from '../HomeTab/HomeTab';
 import NotFoundPage from '../../pages/NotFoundPage';
-import Layout from '../Layout/Layout';
+// import Layout from '../Layout/Layout';
 
 const CatalogTab = lazy(() => import('../CatalogTab/CatalogTab'));
 const CarTab = lazy(() => import('../CarTab/CarTab'));
+const Layout = lazy(() => import('../Layout/Layout'));
 
 function App() {
   return (

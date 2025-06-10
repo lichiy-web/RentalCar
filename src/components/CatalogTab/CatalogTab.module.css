@@ -1,0 +1,10 @@
+.catalogTabContainer {
+    width: 100%;
+    height: 100%;
+    padding: 5.25rem 7.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5rem;
+
+}
