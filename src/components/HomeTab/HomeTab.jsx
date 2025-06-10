@@ -4,11 +4,9 @@ import css from './HomeTab.module.css';
 const HomeTab = () => {
   return (
     <div className={css.homeTabContainer}>
-      <button className={css.mainBtn}>
-        <Link to="/catalog" className={css.mainBtnLink}>
-          View Catalog
-        </Link>
-      </button>
+      <Link to="/catalog" className={css.mainBtn}>
+        View Catalog
+      </Link>
       <p className={css.description}>
         Reliable and budget-friendly rentals for any journey
       </p>

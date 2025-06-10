@@ -19,15 +19,16 @@
     height: 2.75rem;
     padding: .75rem 5.4rem;
     display: flex;
-}
-
-.mainBtnLink {
     color: var(--white);
     text-decoration: none;
     font-weight: 600;
     line-height: 1.25;
-    width: 100%;
-    
+    background-color: var(--button);    
+    border-radius: 12px; 
+}
+
+.mainBtn:hover {
+    background-color: var(--button-hover);
 }
 
 .description {
@@ -35,7 +36,7 @@
     font-size: 1.5rem;
     line-height: 1.33333;
     text-align: center;
-    margin: 0 0 2.5rem 0; 
+    margin: 0 0 2.5rem 0;
 }
 
 .moto {
