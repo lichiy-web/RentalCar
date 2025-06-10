@@ -1,3 +1,11 @@
 .carTableContainer {
- background-color: brown;
+    width: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 3rem;  
+    color: var(--black);    
+    
+ /* background-color: brown; */
 }

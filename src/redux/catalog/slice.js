@@ -44,7 +44,7 @@ const slice = createSlice({
           });
           state.isLoading = false;
           state.error = null;
-          state.cars.concat(cars);
+          state.cars = state.cars.concat(cars);
           state.paginationData.page = Number(page);
           state.paginationData.perPage = Number(perPage) || defaultPerPage;
           state.paginationData.totalPages = Number(totalPages);

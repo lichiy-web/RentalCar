@@ -1,9 +1,16 @@
+import { useSelector } from 'react-redux';
 import css from './CarTable.module.css';
+import { selectCars } from '../../redux/catalog/selectors';
+import CarItem from '../CarItem/CarItem';
 
 const CarTable = () => {
+  const cars = useSelector(selectCars);
+  console.log('CarTable', { cars });
   return (
     <div className={css.carTableContainer}>
-      <h1>CarTable</h1>
+      {cars.map(car => (
+        <CarItem key={car.id} car={car} />
+      ))}
     </div>
   );
 };

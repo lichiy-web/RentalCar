@@ -1,0 +1,62 @@
+.carItemContainer {    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: ; */
+    font-family: var(--font-family);
+    gap: 0;
+}
+
+.carImg {
+    width: 100%;
+    border-radius: 14px;
+}
+
+.mainInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.mainInfoItem {
+    margin: 0;
+}
+
+.mainInfoItem {
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.secondaryInfo {
+    font-size: .75rem;
+    color: var(--select-options-color);
+    margin: .5rem 0 0 0;
+}
+
+.secondaryInfo>span {
+    border-right: 1px solid var(--select-options-color);
+    padding: 0 .375rem;
+}
+
+.secondaryInfo>span:first-child {
+    padding-left: 0;
+}
+
+.techInfo>span:last-child {
+    border: 0;
+}
+
+.model {
+    color: var(--button);
+}
+
+.readMoreBtn {
+    color: var(--white);
+    background-color: var(--button);
+    border-radius: .75rem;
+    text-decoration: none;
+    text-align: center;
+    padding: .75rem;
+    margin-top: 1.75rem;
+    
+}

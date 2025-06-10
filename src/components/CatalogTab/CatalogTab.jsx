@@ -38,8 +38,8 @@ const CatalogTab = () => {
   }, [dispatch]);
   return (
     <div className={css.catalogTabContainer}>
-      <CarTable />
       <CatalogControl />
+      <CarTable />
       <LoadMoreBtn />
     </div>
   );
