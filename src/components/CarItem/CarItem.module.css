@@ -10,6 +10,9 @@
 .carImg {
     width: 100%;
     border-radius: 14px;
+    aspect-ratio: 69 / 67;
+    object-fit: cover;
+    object-position: center;
 }
 
 .mainInfo {
