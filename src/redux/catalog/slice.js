@@ -31,9 +31,9 @@ const slice = createSlice({
   name: 'catalog',
   initialState,
   reducers: {
-    resetCatalogControls: () => {
+    resetCatalogControls: state => {
       console.log('Reset catalog!');
-      return initialState;
+      return { ...initialState, brands: state.brands };
     },
     setPage: (state, { payload: page }) => {
       state.paginationData.page = page;

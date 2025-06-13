@@ -5,6 +5,15 @@ import DropdownIndicator from '../DropdownIndicator/DropdownIndicator';
 import { useField, useFormikContext } from 'formik';
 import { resetCatalogControls } from '../../redux/catalog/slice';
 import { changeFilter } from '../../redux/filters/slice';
+import { components } from 'react-select';
+
+const FormattedSingleValue = props => {
+  return (
+    <components.SingleValue {...props}>
+      To ${props.data.label}
+    </components.SingleValue>
+  );
+};
 
 const createOption = value => ({ value, label: String(value) });
 const priceFrom = 30;
@@ -119,7 +128,10 @@ const PriceSelect = ({ name, ...props }) => {
         // cacheOptions
         // defaultValue={defaultValue}
         styles={customStyles}
-        components={{ DropdownIndicator }}
+        components={{
+          DropdownIndicator,
+          SingleValue: FormattedSingleValue,
+        }}
         onChange={option => {
           if (!option) {
             dispatch(resetCatalogControls());
