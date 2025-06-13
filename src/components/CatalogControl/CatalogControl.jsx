@@ -8,6 +8,7 @@ import { changeFilter } from '../../redux/filters/slice';
 import { selectFilters } from '../../redux/filters/selectors';
 import PriceSelect from '../PriceSelect/PriceSelect';
 import MileageField from '../MileageField/MileageField';
+import { formatInput } from '../../utilits/utilits';
 
 const catalogFormSchema = Yup.object().shape({
   brand: Yup.object()
@@ -27,7 +28,15 @@ const catalogFormSchema = Yup.object().shape({
 });
 
 const CatalogControl = () => {
-  const initialValues = useSelector(selectFilters);
+  const filters = useSelector(selectFilters);
+  const initialValues = Object.entries(filters).reduce(
+    (filters, [key, value]) => {
+      filters[key] = typeof value === 'string' ? formatInput(value) : value;
+      return filters;
+    },
+    {}
+  );
+  console.log({ filters, initialValues });
 
   const dispatch = useDispatch();
   const handleSubmit = filters => {

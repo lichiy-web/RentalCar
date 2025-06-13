@@ -6,6 +6,7 @@ import { useField, useFormikContext } from 'formik';
 import { resetCatalogControls } from '../../redux/catalog/slice';
 import { setFilter } from '../../redux/filters/slice';
 import { components } from 'react-select';
+import { createOption } from '../../utilits/utilits';
 
 const FormattedSingleValue = props => {
   return (
@@ -15,7 +16,6 @@ const FormattedSingleValue = props => {
   );
 };
 
-const createOption = value => ({ value, label: String(value) });
 const priceFrom = 30;
 const priceStep = 10;
 const totalItems = 20;

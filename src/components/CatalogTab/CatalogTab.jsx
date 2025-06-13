@@ -34,7 +34,6 @@ const CatalogTab = () => {
       })
     );
 
-    // dispatch(fetchBrands(abortController.signal));
     dispatch(
       fetchCar({
         carId: '11a3ab35-07b8-4336-b06b-602cdc309f2c',

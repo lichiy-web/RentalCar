@@ -30,3 +30,5 @@ export const formatInput = (prefix, locale) => value =>
   formatValue(value, prefix, locale).formattedValue;
 
 export const unformatInput = value => formatValue(value).rawValue;
+
+export const createOption = value => ({ value, label: String(value) });

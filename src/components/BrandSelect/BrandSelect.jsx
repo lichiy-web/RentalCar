@@ -113,7 +113,7 @@ const BrandSelect = ({ name, ...props }) => {
         loadOptions={loadOptions}
         defaultOptions
         cacheOptions
-        defaultValue={defaultValue}
+        // defaultValue={defaultValue}
         styles={customStyles}
         components={{ DropdownIndicator }}
         onChange={option => {
