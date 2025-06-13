@@ -4,7 +4,7 @@ import Select from 'react-select';
 import DropdownIndicator from '../DropdownIndicator/DropdownIndicator';
 import { useField, useFormikContext } from 'formik';
 import { resetCatalogControls } from '../../redux/catalog/slice';
-import { changeFilter } from '../../redux/filters/slice';
+import { setFilter } from '../../redux/filters/slice';
 import { components } from 'react-select';
 
 const FormattedSingleValue = props => {
@@ -70,6 +70,10 @@ const customStyles = {
     fontWeight: 500,
     color: 'var(--black)',
   }),
+  placeholder: provided => ({
+    ...provided,
+    color: 'var(--black)',
+  }),
   menu: provided => ({
     ...provided,
     borderRadius: '.75em',
@@ -113,20 +117,11 @@ const PriceSelect = ({ name, ...props }) => {
   const { setFieldValue } = useFormikContext();
 
   const dispatch = useDispatch();
-  // const loadOptions = () =>
-  //   dispatch(fetchBrands())
-  //     .unwrap()
-  //     .then(brands => brands.map(brand => createOption(brand)));
   return (
     <>
       <Select
         className={css.priceSelectContainer}
         options={options}
-        // options={[{ value: 'one', label: 'One' }]}
-        // loadOptions={loadOptions}
-        // defaultOptions
-        // cacheOptions
-        // defaultValue={defaultValue}
         styles={customStyles}
         components={{
           DropdownIndicator,
@@ -135,7 +130,7 @@ const PriceSelect = ({ name, ...props }) => {
         onChange={option => {
           if (!option) {
             dispatch(resetCatalogControls());
-            dispatch(changeFilter({ rentalPrice: null }));
+            dispatch(setFilter({ name: 'rentalPrice', value: '' }));
           }
           setFieldValue(name, option);
         }}

@@ -5,6 +5,7 @@
     /* align-items: ; */
     font-family: var(--font-family);
     gap: 0;
+    width: 100%
 }
 
 .carImg {
@@ -25,10 +26,15 @@
     margin: 0;
     font-weight: 500;
     line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .secondaryInfo {
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-size: .75rem;
     color: var(--select-options-color);
     margin: .5rem 0 0 0;

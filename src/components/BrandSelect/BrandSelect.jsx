@@ -5,7 +5,7 @@ import AsyncSelect from 'react-select/async';
 import DropdownIndicator from '../DropdownIndicator/DropdownIndicator';
 import { useField, useFormikContext } from 'formik';
 import { resetCatalogControls } from '../../redux/catalog/slice';
-import { changeFilter } from '../../redux/filters/slice';
+import { setFilter } from '../../redux/filters/slice';
 
 const createOption = label => ({ value: label.toLowerCase(), label });
 const defaultValue = { value: '', label: 'Choose a brand' };
@@ -53,6 +53,10 @@ const customStyles = {
     ...provided,
     fontFamily: 'var(--font-family)',
     fontWeight: 500,
+    color: 'var(--black)',
+  }),
+  placeholder: provided => ({
+    ...provided,
     color: 'var(--black)',
   }),
   menu: provided => ({
@@ -115,7 +119,7 @@ const BrandSelect = ({ name, ...props }) => {
         onChange={option => {
           if (!option) {
             dispatch(resetCatalogControls());
-            dispatch(changeFilter({ brand: null }));
+            dispatch(setFilter({ name: 'brand', value: '' }));
           }
           setFieldValue(name, option);
         }}

@@ -1,0 +1,30 @@
+.mileageFieldContainer {
+    display: flex;
+    height: 2.75rem;
+
+    background-color: var(--input-color);
+    border-radius: .75rem;
+
+}
+
+.mileageField {
+    background-color: transparent;
+    overflow: hidden;
+    border: 0;
+    outline: 0;
+
+    font-family: var(--font-family);
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--black);
+    padding-left: 1.5rem;
+}
+
+.mileageField::placeholder {
+    color: var(--black);
+}
+
+.mileageSeparator {
+    width: 1px;
+    background-color: var(--select-scroll);
+}

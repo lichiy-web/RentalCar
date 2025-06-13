@@ -11,12 +11,18 @@ import CarTable from '../CarTable/CarTable';
 import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
 import { selectFilters } from '../../redux/filters/selectors';
 import { selectPaginationData } from '../../redux/catalog/selectors';
+import { resetCatalogControls } from '../../redux/catalog/slice';
 
 const CatalogTab = () => {
   const filters = useSelector(selectFilters);
   const { page, perPage } = useSelector(selectPaginationData);
 
+  // Reset catalog state before each page load
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(resetCatalogControls());
+  }, [dispatch]);
+
   useEffect(() => {
     const abortController = new AbortController();
     dispatch(

@@ -31,11 +31,11 @@ const CarItem = ({ car }) => {
       <img src={img} alt="Car Photo" className={css.carImg} />
       <div className={css.mainInfo}>
         <p className={clsx(css.mainInfoItem, css.modelInfo)}>
-          <span className={clsx(css.nodelInfoItem, css.brand)}>
+          <span className={clsx(css.modelInfoItem, css.brand)}>
             {brand + ' '}
           </span>
-          <span className={clsx(css.nodelInfoItem, css.model)}>{model}</span>,
-          <span className={clsx(css.nodelInfoItem, css.year)}>
+          <span className={clsx(css.modelInfoItem, css.model)}>{model}</span>,
+          <span className={clsx(css.modelInfoItem, css.year)}>
             {' ' + year}
           </span>
         </p>

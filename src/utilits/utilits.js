@@ -12,3 +12,21 @@ export const createQuery = (queryParams = {}, substitution = {}) => {
   }, null);
   return query ?? '';
 };
+
+export const formatValue = (value, prefix, locale = 'en-US') => {
+  const extractedDigits = value.match(/\d/g);
+  if (!extractedDigits) {
+    return { rawValue: null, formattedValue: '' };
+  }
+
+  const rawValue = parseInt(extractedDigits.join(''));
+  const localeNumber = Intl.NumberFormat(locale).format(rawValue);
+  const formattedValue = `${prefix} ${localeNumber}`;
+
+  return { rawValue, formattedValue };
+};
+
+export const formatInput = (prefix, locale) => value =>
+  formatValue(value, prefix, locale).formattedValue;
+
+export const unformatInput = value => formatValue(value).rawValue;

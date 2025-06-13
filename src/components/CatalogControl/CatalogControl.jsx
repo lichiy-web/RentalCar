@@ -7,6 +7,7 @@ import { resetCatalogControls } from '../../redux/catalog/slice';
 import { changeFilter } from '../../redux/filters/slice';
 import { selectFilters } from '../../redux/filters/selectors';
 import PriceSelect from '../PriceSelect/PriceSelect';
+import MileageField from '../MileageField/MileageField';
 
 const catalogFormSchema = Yup.object().shape({
   brand: Yup.object()
@@ -21,18 +22,12 @@ const catalogFormSchema = Yup.object().shape({
       label: Yup.string(),
     })
     .nullable(),
-  minMileage: Yup.number().nullable(),
-  maxMileage: Yup.number().nullable(),
+  minMileage: Yup.string().nullable(),
+  maxMileage: Yup.string().nullable(),
 });
 
 const CatalogControl = () => {
-  const filters = useSelector(selectFilters);
-  const initialValues = {
-    brand: filters.brand,
-    rentalPrice: filters.rentalPrice,
-    minMileage: null,
-    maxMileage: null,
-  };
+  const initialValues = useSelector(selectFilters);
 
   const dispatch = useDispatch();
   const handleSubmit = filters => {
@@ -55,6 +50,10 @@ const CatalogControl = () => {
         <label className={css.inputItem}>
           <div className={css.inputTitle}>Price/ 1 hour</div>
           <PriceSelect name="rentalPrice" />
+        </label>
+        <label className={css.inputItem}>
+          <div className={css.inputTitle}>Сar mileage / km</div>
+          <MileageField />
         </label>
 
         <button type="submit" className={css.submitBtn}>
