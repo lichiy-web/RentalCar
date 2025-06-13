@@ -5,6 +5,7 @@ export const createQuery = (queryParams = {}, substitution = {}) => {
     param = Object.keys(substitution).includes(param)
       ? substitution[param]
       : param;
+    value = value?.value ?? value;
     const queryEntry = `${param}=${value}`;
     const queryString = (isDefined(q) ? q + '&' : '?') + queryEntry;
     return isDefined(value) ? queryString : q;

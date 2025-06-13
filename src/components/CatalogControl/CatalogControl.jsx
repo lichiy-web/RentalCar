@@ -1,56 +1,55 @@
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { Form, Formik } from 'formik';
 import css from './CatalogControl.module.css';
 import * as Yup from 'yup';
-import { fetchCars } from '../../redux/catalog/operations';
-import { useDispatch } from 'react-redux';
-// import { selectBrands } from '../../redux/catalog/selectors';
+import { useDispatch, useSelector } from 'react-redux';
 import BrandSelect from '../BrandSelect/BrandSelect';
-
-const initialValues = {
-  brand: '',
-  rentalPrice: '',
-  minMileage: '',
-  maxMileage: '',
-};
+import { resetCatalogControls } from '../../redux/catalog/slice';
+import { changeFilter } from '../../redux/filters/slice';
+import { selectFilters } from '../../redux/filters/selectors';
 
 const catalogFormSchema = Yup.object().shape({
-  brand: Yup.string(),
-  rentalPrice: Yup.number(),
-  minMileage: Yup.number(),
-  maxMileage: Yup.number(),
+  brand: Yup.object()
+    .shape({
+      value: Yup.string(),
+      label: Yup.string(),
+    })
+    .nullable(),
+  rentalPrice: Yup.number().nullable(),
+  minMileage: Yup.number().nullable(),
+  maxMileage: Yup.number().nullable(),
 });
 
 const CatalogControl = () => {
-  // const brands = useSelector(selectBrands);
-  const dispatch = useDispatch();
-  const handleSubmit = (filters, action) => {
-    dispatch(fetchCars(filters));
-    action.resetForm();
+  const filters = useSelector(selectFilters);
+  const initialValues = {
+    brand: filters.brand,
+    rentalPrice: null,
+    minMileage: null,
+    maxMileage: null,
   };
+
+  const dispatch = useDispatch();
+  const handleSubmit = filters => {
+    dispatch(resetCatalogControls());
+    dispatch(changeFilter(filters));
+  };
+
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={catalogFormSchema}
       onSubmit={handleSubmit}
+      enableReinitialize
     >
-      <Form>
-        {/* <label className={css.formItem}>
-          <span className={css.inputTitle}>Brand</span>
-          <Field className={css.inputItem} name="brand" component="select">
-            <option value="">Choose a brand</option>
-            {brands.map(brand => (
-              <option key={brand} value={brand}>
-                {brand}
-              </option>
-            ))}
-          </Field>
-          <ErrorMessage
-            className={css.errorMessage}
-            name="brand"
-            component="span"
-          />
-        </label> */}
-        <BrandSelect />
+      <Form className={css.catalogControl}>
+        <label className={css.inputItem}>
+          <div className={css.inputTitle}>Car brand</div>
+          <BrandSelect name="brand" />
+        </label>
+
+        <button type="submit" className={css.submitBtn}>
+          Search
+        </button>
       </Form>
     </Formik>
   );

@@ -3,6 +3,9 @@ import { fetchBrands } from '../../redux/catalog/operations';
 import css from './BrandSelect.module.css';
 import AsyncSelect from 'react-select/async';
 import DropdownIndicator from '../DropdownIndicator/DropdownIndicator';
+import { useField, useFormikContext } from 'formik';
+import { resetCatalogControls } from '../../redux/catalog/slice';
+import { changeFilter } from '../../redux/filters/slice';
 
 const createOption = label => ({ value: label.toLowerCase(), label });
 const defaultValue = { value: '', label: 'Choose a brand' };
@@ -84,24 +87,47 @@ const customStyles = {
     ...provided,
     display: 'none',
   }),
+  clearIndicator: provided => ({
+    ...provided,
+    paddingRight: 0,
+  }),
 };
 
-const BrandSelect = () => {
+const BrandSelect = ({ name, ...props }) => {
+  const [field, meta] = useField(name);
+  const { setFieldValue } = useFormikContext();
+
   const dispatch = useDispatch();
   const loadOptions = () =>
     dispatch(fetchBrands())
       .unwrap()
       .then(brands => brands.map(brand => createOption(brand)));
   return (
-    <AsyncSelect
-      className={css.brandSelectContainer}
-      loadOptions={loadOptions}
-      defaultOptions
-      cacheOptions
-      defaultValue={defaultValue}
-      styles={customStyles}
-      components={{ DropdownIndicator }}
-    />
+    <>
+      <AsyncSelect
+        className={css.brandSelectContainer}
+        loadOptions={loadOptions}
+        defaultOptions
+        cacheOptions
+        defaultValue={defaultValue}
+        styles={customStyles}
+        components={{ DropdownIndicator }}
+        onChange={option => {
+          if (!option) {
+            dispatch(resetCatalogControls());
+            dispatch(changeFilter({ brand: null }));
+          }
+          setFieldValue(name, option);
+        }}
+        value={field.value}
+        isClearable
+        placeholder={defaultValue.label}
+        {...props}
+      />
+      {meta.touched && meta.error && (
+        <div style={{ color: 'red', fontSize: '0.8rem' }}>{meta.error}</div>
+      )}
+    </>
   );
 };
 export default BrandSelect;

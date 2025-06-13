@@ -30,6 +30,15 @@ const initialState = {
 const slice = createSlice({
   name: 'catalog',
   initialState,
+  reducers: {
+    resetCatalogControls: () => {
+      console.log('Reset catalog!');
+      return initialState;
+    },
+    setPage: (state, { payload: page }) => {
+      state.paginationData.page = page;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchCars.pending, handlePending)
@@ -73,3 +82,4 @@ const slice = createSlice({
 });
 
 export const catalogReducer = slice.reducer;
+export const { resetCatalogControls, setPage } = slice.actions;

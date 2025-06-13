@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const CarItem = ({ car }) => {
   if (!car) return;
-  console.log('In CarItem: ', car);
+  // console.log('In CarItem: ', car);
   const {
     id,
     year,

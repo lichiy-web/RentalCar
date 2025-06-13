@@ -23,14 +23,12 @@
 
 .mainInfoItem {
     margin: 0;
-}
-
-.mainInfoItem {
     font-weight: 500;
     line-height: 1.25;
 }
 
 .secondaryInfo {
+    white-space: nowrap;
     font-size: .75rem;
     color: var(--select-options-color);
     margin: .5rem 0 0 0;

@@ -4,15 +4,15 @@ import {
   selectIsLoading,
   selectPaginationData,
 } from '../../redux/catalog/selectors';
-import { fetchCars } from '../../redux/catalog/operations';
+import { setPage } from '../../redux/catalog/slice';
 
 const LoadMoreBtn = () => {
   const isLoading = useSelector(selectIsLoading);
-  const { perPage, page, hasNextPage } = useSelector(selectPaginationData);
-  console.log({ perPage, page, hasNextPage });
+  const { page, hasNextPage } = useSelector(selectPaginationData);
+
   const dispatch = useDispatch();
   const handleLoadMore = () => {
-    dispatch(fetchCars({ perPage, page: page + 1 }));
+    dispatch(setPage(page + 1));
   };
   return (
     hasNextPage && (

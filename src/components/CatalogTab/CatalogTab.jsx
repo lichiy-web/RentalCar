@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import css from './CatalogTab.module.css';
 import { useEffect } from 'react';
 import {
@@ -9,19 +9,21 @@ import {
 import CatalogControl from '../CatalogControl/CatalogControl';
 import CarTable from '../CarTable/CarTable';
 import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
+import { selectFilters } from '../../redux/filters/selectors';
+import { selectPaginationData } from '../../redux/catalog/selectors';
 
 const CatalogTab = () => {
+  const filters = useSelector(selectFilters);
+  const { page, perPage } = useSelector(selectPaginationData);
+
   const dispatch = useDispatch();
   useEffect(() => {
     const abortController = new AbortController();
     dispatch(
       fetchCars({
-        perPage: 12,
-        page: 1,
-        // brand: 'BMW',
-        // rentalPrice: 40,
-        // minMileage: 4000,
-        // maxMileage: 5000,
+        perPage,
+        page,
+        ...filters,
         signal: abortController.signal,
       })
     );
@@ -35,7 +37,7 @@ const CatalogTab = () => {
     );
 
     return () => abortController.abort();
-  }, [dispatch]);
+  }, [dispatch, filters, page, perPage]);
   return (
     <div className={css.catalogTabContainer}>
       <CatalogControl />

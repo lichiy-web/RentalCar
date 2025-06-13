@@ -5,7 +5,7 @@
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 2rem;
     grid-row-gap: 3rem;  
-    color: var(--black);    
+    color: var(--black);   
     
  /* background-color: brown; */
 }
