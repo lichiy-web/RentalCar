@@ -2,8 +2,9 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import css from './CatalogControl.module.css';
 import * as Yup from 'yup';
 import { fetchCars } from '../../redux/catalog/operations';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectBrands } from '../../redux/catalog/selectors';
+import { useDispatch } from 'react-redux';
+// import { selectBrands } from '../../redux/catalog/selectors';
+import BrandSelect from '../BrandSelect/BrandSelect';
 
 const initialValues = {
   brand: '',
@@ -20,7 +21,7 @@ const catalogFormSchema = Yup.object().shape({
 });
 
 const CatalogControl = () => {
-  const brands = useSelector(selectBrands);
+  // const brands = useSelector(selectBrands);
   const dispatch = useDispatch();
   const handleSubmit = (filters, action) => {
     dispatch(fetchCars(filters));
@@ -33,7 +34,7 @@ const CatalogControl = () => {
       onSubmit={handleSubmit}
     >
       <Form>
-        <label className={css.formItem}>
+        {/* <label className={css.formItem}>
           <span className={css.inputTitle}>Brand</span>
           <Field className={css.inputItem} name="brand" component="select">
             <option value="">Choose a brand</option>
@@ -48,7 +49,8 @@ const CatalogControl = () => {
             name="brand"
             component="span"
           />
-        </label>
+        </label> */}
+        <BrandSelect />
       </Form>
     </Formik>
   );
