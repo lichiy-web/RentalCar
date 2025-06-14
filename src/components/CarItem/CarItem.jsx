@@ -5,6 +5,7 @@ import FavoriteChevron from '../FavoriteChevron/FavoriteChevron';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFavorite } from '../../redux/app/selectors';
 import { toggleFavoriteCar } from '../../redux/app/slice';
+import { mileageFormat } from '../../utilits/utilits';
 
 const CarItem = ({ car }) => {
   const favoriteCars = useSelector(selectFavorite);
@@ -31,7 +32,7 @@ const CarItem = ({ car }) => {
   } = car;
   // eslint-disable-next-line no-unused-vars
   const [street, city, country] = address.split(', ');
-  const formatedMileage = new Intl.NumberFormat('uk-UA').format(mileage);
+  const formatedMileage = mileageFormat(mileage);
 
   const isFavorite = favoriteCars.includes(id);
   const handleToggleFavorite = () => {
@@ -67,7 +68,7 @@ const CarItem = ({ car }) => {
       </p>
       <p className={clsx(css.secondaryInfo, css.techInfo)}>
         <span>{type}</span>
-        <span>{`${formatedMileage} km`}</span>
+        <span>{formatedMileage}</span>
       </p>
       <Link to={`/catalog/${id}`} className={css.readMoreBtn}>
         Read more

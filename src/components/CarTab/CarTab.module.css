@@ -1,12 +1,60 @@
 .carTabContainer {
     width: 100%;
     padding: 5.25rem 7.5rem;
-    display: flex;
+    display: grid;
     justify-content: space-between;
-    gap: 3.5rem;
+    grid-template-columns: 169fr 131fr;
+    gap: 4.5rem;
     color: var(--black);
+    font-family: var(--font-family);
     min-height: calc(100vh - 4.25rem) ;
 
-    border: 1px solid yellowgreen;
+    /* border: 1px solid yellowgreen; */
 }
 
+/* .column {
+} */
+
+.left {
+    /* border: 1px solid red; */
+}
+.right {
+    border: 1px solid blue;
+}
+
+.carImg {
+    width: 100%;
+    aspect-ratio: 1.25;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 19px;
+}
+
+.details {
+    border: 1px solid teal;
+}
+
+.rentalConditions {
+    border: 1px solid springgreen;
+}
+
+.carSpecifications {
+    border: 1px solid slateblue;
+}
+
+.accessoritiesFunctionalities {
+    border: 1px solid salmon;
+}
+
+.detailsRow,
+.conditionRow,
+.specificationRow,
+.functionalitiesRow {
+    display: flex;
+    gap: .2rem
+}
+
+.icon {
+    width: .75rem;
+    height: 1rem;
+}

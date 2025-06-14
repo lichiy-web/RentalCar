@@ -50,3 +50,14 @@ export const formatInput = (prefix, locale) => value =>
 export const unformatInput = value => formatValue(value).rawValue;
 
 export const createOption = value => ({ value, label: String(value) });
+
+export const parseAddress = addressStr => {
+  const [street, city, country] = addressStr.split(', ');
+  return { street, city, country };
+};
+
+export const mileageFormat = mileage =>
+  new Intl.NumberFormat('uk-UA').format(mileage) + ' km';
+
+export const capitalize = str =>
+  (str = str.trim()) && str[0].toUpperCase() + str.substring(1).toLowerCase();
