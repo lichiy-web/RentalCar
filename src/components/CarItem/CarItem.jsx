@@ -1,8 +1,14 @@
 import clsx from 'clsx';
 import css from './CarItem.module.css';
 import { Link } from 'react-router-dom';
+import FavoriteChevron from '../FavoriteChevron/FavoriteChevron';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectFavorite } from '../../redux/app/selectors';
+import { toggleFavoriteCar } from '../../redux/app/slice';
 
 const CarItem = ({ car }) => {
+  const favoriteCars = useSelector(selectFavorite);
+  const dispatch = useDispatch();
   if (!car) return;
   // console.log('In CarItem: ', car);
   const {
@@ -26,8 +32,19 @@ const CarItem = ({ car }) => {
   // eslint-disable-next-line no-unused-vars
   const [street, city, country] = address.split(', ');
   const formatedMileage = new Intl.NumberFormat('uk-UA').format(mileage);
+
+  const isFavorite = favoriteCars.includes(id);
+  const handleToggleFavorite = () => {
+    dispatch(toggleFavoriteCar(id));
+  };
+
   return (
     <li className={css.carItemContainer}>
+      <FavoriteChevron
+        onClick={handleToggleFavorite}
+        isFavorite={isFavorite}
+        className={css.favoriteChevronContainer}
+      />
       <img src={img} alt="Car Photo" className={css.carImg} />
       <div className={css.mainInfo}>
         <p className={clsx(css.mainInfoItem, css.modelInfo)}>
@@ -52,7 +69,7 @@ const CarItem = ({ car }) => {
         <span>{type}</span>
         <span>{`${formatedMileage} km`}</span>
       </p>
-      <Link to={`/cars/${id}`} className={css.readMoreBtn}>
+      <Link to={`/catalog/${id}`} className={css.readMoreBtn}>
         Read more
       </Link>
     </li>

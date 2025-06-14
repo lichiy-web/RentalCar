@@ -28,14 +28,11 @@ const catalogFormSchema = Yup.object().shape({
 });
 
 const CatalogControl = () => {
-  const filters = useSelector(selectFilters);
-  const initialValues = Object.entries(filters).reduce(
-    (filters, [key, value]) => {
-      filters[key] = typeof value === 'string' ? formatInput(value) : value;
-      return filters;
-    },
-    {}
-  );
+  let filters = useSelector(selectFilters);
+
+  let initialValues = { ...filters };
+  initialValues.minMileage = formatInput('From')(filters.minMileage);
+  initialValues.maxMileage = formatInput('To')(filters.maxMileage);
   console.log({ filters, initialValues });
 
   const dispatch = useDispatch();

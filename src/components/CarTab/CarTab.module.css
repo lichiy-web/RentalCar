@@ -1,0 +1,12 @@
+.carTabContainer {
+    width: 100%;
+    padding: 5.25rem 7.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 3.5rem;
+    color: var(--black);
+    min-height: calc(100vh - 4.25rem) ;
+
+    border: 1px solid yellowgreen;
+}
+

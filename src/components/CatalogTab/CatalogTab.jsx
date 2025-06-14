@@ -1,11 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import css from './CatalogTab.module.css';
 import { useEffect } from 'react';
-import {
-  // fetchBrands,
-  fetchCar,
-  fetchCars,
-} from '../../redux/catalog/operations';
+import { fetchCars } from '../../redux/catalog/operations';
 import CatalogControl from '../CatalogControl/CatalogControl';
 import CarTable from '../CarTable/CarTable';
 import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
@@ -30,13 +26,6 @@ const CatalogTab = () => {
         perPage,
         page,
         ...filters,
-        signal: abortController.signal,
-      })
-    );
-
-    dispatch(
-      fetchCar({
-        carId: '11a3ab35-07b8-4336-b06b-602cdc309f2c',
         signal: abortController.signal,
       })
     );

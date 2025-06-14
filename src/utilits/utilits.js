@@ -13,13 +13,31 @@ export const createQuery = (queryParams = {}, substitution = {}) => {
   return query ?? '';
 };
 
+export const hasType = (value, types) => {
+  const valueType =
+    value === null ? 'null' : isNaN(value) ? 'number' : typeof value;
+  return !Array.isArray(types) ? null : types.includes(valueType);
+};
+
 export const formatValue = (value, prefix, locale = 'en-US') => {
-  const extractedDigits = value.match(/\d/g);
-  if (!extractedDigits) {
-    return { rawValue: null, formattedValue: '' };
+  if (!value) return { rawValue: null, formattedValue: prefix };
+  if (!hasType(value, ['string', 'number'])) return value;
+
+  let rawValue;
+  switch (typeof value) {
+    case 'number':
+      rawValue = value;
+      break;
+    case 'string':
+      // eslint-disable-next-line no-case-declarations
+      const extractedDigits = value.match(/\d/g);
+      if (!extractedDigits) {
+        return { rawValue: null, formattedValue: prefix };
+      }
+      rawValue = parseInt(extractedDigits.join(''));
+      break;
   }
 
-  const rawValue = parseInt(extractedDigits.join(''));
   const localeNumber = Intl.NumberFormat(locale).format(rawValue);
   const formattedValue = `${prefix} ${localeNumber}`;
 

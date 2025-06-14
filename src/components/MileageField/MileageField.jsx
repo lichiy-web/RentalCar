@@ -8,14 +8,14 @@ const MileageField = () => {
       <FormattedField
         placeholder="From"
         name="minMileage"
-        formatInput={formatInput('From')}
+        formatInput={formatInput('From ')}
         className={css.mileageField}
       />
       <div className={css.mileageSeparator}></div>
       <FormattedField
         placeholder="To"
         name="maxMileage"
-        formatInput={formatInput('To')}
+        formatInput={formatInput('To ')}
         className={css.mileageField}
       />
     </div>

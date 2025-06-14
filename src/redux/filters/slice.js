@@ -2,9 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 import { unformatInput } from '../../utilits/utilits';
 
 const initialState = {
-  brand: undefined,
-  rentalPrice: undefined,
-  minMileage: undefined,
+  brand: null,
+  rentalPrice: null,
+  minMileage: null,
   maxMileage: undefined,
 };
 

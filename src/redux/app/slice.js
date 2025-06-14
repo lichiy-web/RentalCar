@@ -12,8 +12,15 @@ const slice = createSlice({
     completePage: state => {
       state.isPageLoaded = true;
     },
+    toggleFavoriteCar: (state, { payload: carId }) => {
+      if (state.favorite.includes(carId)) {
+        state.favorite = state.favorite.filter(favId => favId !== carId);
+      } else {
+        state.favorite.push(carId);
+      }
+    },
   },
 });
 
 export const appReducer = slice.reducer;
-export const { completePage } = slice.actions;
+export const { completePage, toggleFavoriteCar } = slice.actions;
