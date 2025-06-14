@@ -15,12 +15,12 @@
 /* .column {
 } */
 
-.left {
-    /* border: 1px solid red; */
+/* .left {
+    border: 1px solid red;
 }
 .right {
     border: 1px solid blue;
-}
+} */
 
 .carImg {
     width: 100%;
@@ -30,7 +30,7 @@
     border-radius: 19px;
 }
 
-.details {
+/* .details {
     border: 1px solid teal;
 }
 
@@ -44,7 +44,7 @@
 
 .accessoritiesFunctionalities {
     border: 1px solid salmon;
-}
+} */
 
 .detailsRow,
 .conditionRow,
