@@ -41,7 +41,6 @@ const CarTab = () => {
     accessories,
     functionalities,
     rentalPrice,
-    // rentalCompany,
     address,
     rentalConditions,
     mileage,

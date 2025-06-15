@@ -8,8 +8,6 @@
     color: var(--black);
     font-family: var(--font-family);
     min-height: calc(100vh - 4.25rem) ;
-    
-    /* border: 1px solid yellowgreen; */
 }
 
 .column {
@@ -19,7 +17,6 @@
 
 .left {
     gap: 2.5rem;
-    /* border: 1px solid red; */
 }
 
 .carImg {
@@ -32,7 +29,6 @@
 
 .right {
     gap: 4.25rem;
-    /* border: 1px solid blue; */
 }
 
 .carAdditionalInfo {
@@ -40,22 +36,6 @@
     flex-direction: column;
     gap: 6.875rem;
 }
-
-/* .details {
-    border: 1px solid teal;
-}
-
-.rentalConditions {
-    border: 1px solid springgreen;
-}
-
-.carSpecifications {
-    border: 1px solid slateblue;
-}
-
-.accessoritiesFunctionalities {
-    border: 1px solid salmon;
-} */
 
 .row {
     display: flex;
