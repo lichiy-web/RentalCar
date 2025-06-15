@@ -6,7 +6,7 @@ the time you need, and at a very low price.
 web application. On the
 [catalog page](https://rental-car-nine-pi.vercel.app/catalog) you can:
 
-- explore car available to rent
+- explore cars available to rent
 - load more and more cars if you need
 - filter result by brand, price and mileage range
 - follow the link
