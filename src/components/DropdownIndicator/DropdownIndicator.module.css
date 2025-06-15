@@ -1,4 +1,6 @@
-.dropdownIndicator {
-    fill: var(--black);
-    /* margin-right: .75rem; */
+.icon {
+    width: 13px;
+    height: 7px;
+    display: flex;
+    align-items: center;
 }

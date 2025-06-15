@@ -1,0 +1,84 @@
+.bookingFormContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    border: 1px solid var(--select-scroll);
+    border-radius: 10px;  
+    font-size: 1rem;      
+}
+
+.bookingForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bookingFormTitle {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+.formMoto {
+    font-weight: 500;
+    /* font-size: .75rem; */
+    line-height: 1.25;
+    margin: .5rem 0 0 0;
+    color: var(--select-options-color);
+}
+
+.bookingForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.itemContainer {
+    width: 100%;
+    /* border: 1px solid red; */
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    
+}
+
+.field {
+    width: 100%;
+    outline: none;
+    border-radius: 12px;
+    padding: .75rem 1.25rem;
+    height: 3rem;
+    border-color: transparent;
+    background-color: var(--input-color);
+    font-weight: 500;
+}
+
+.field::placeholder {
+    color: var(--select-options-color);
+}
+
+.commentField {
+    --vertival-paddings: .75rem;
+    --line-height: 1.25;
+    --rows: 4;
+    --font-size: 1rem;
+
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    resize: none;
+    padding: var(--vertival-paddings) 1.5rem;
+    height: calc(var(--rows) * var(--font-size) * var(--line-height) + var(--vertival-paddings) * 2);
+}
+
+.error {
+    color: rgb(187, 4, 4);
+}
+
+.submitBtn {
+    padding: .75rem 3.25rem;
+}

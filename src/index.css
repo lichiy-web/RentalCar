@@ -77,13 +77,15 @@ h1 {
   cursor: pointer;
   transition: border-color 0.25s;
   width: max-content;
+
 }
 .button:hover {
   background-color: var(--button-hover);
 }
 .button:focus,
 .button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  /* outline: 4px auto -webkit-focus-ring-color; */
+  outline: none;
 }
 
 @media (prefers-color-scheme: light) {
