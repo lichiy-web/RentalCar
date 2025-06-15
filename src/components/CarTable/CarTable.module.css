@@ -5,7 +5,12 @@
     grid-template-columns: repeat(4, minmax(200px, 1fr));
     grid-column-gap: 2rem;
     grid-row-gap: 3rem;  
-    color: var(--black);   
-    
- /* background-color: brown; */
+    color: var(--black);  
+    font-family: var(--font-family);
+}
+
+.carTableContainer.noResults {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
 }

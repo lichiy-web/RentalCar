@@ -1,29 +1,24 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import css from './CarTable.module.css';
 import { selectCars } from '../../redux/catalog/selectors';
 import CarItem from '../CarItem/CarItem';
-import { fetchCar } from '../../redux/catalog/operations';
-import { useEffect } from 'react';
+import { isDefined } from '../../utilits/utilits';
+import clsx from 'clsx';
 
 const CarTable = () => {
-  const abortController = new AbortController();
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(
-      fetchCar({
-        carId: '11a3ab35-07b8-4336-b06b-602cdc309f2c',
-        signal: abortController.signal,
-      })
-    );
-  });
-
   const cars = useSelector(selectCars);
+  const hasResults = isDefined(cars) && cars.length > 0;
   return (
-    <div className={css.carTableContainer}>
-      {cars.map(car => (
-        <CarItem key={car.id} car={car} />
-      ))}
+    <div className={clsx(css.carTableContainer, !hasResults && css.noResults)}>
+      {hasResults ? (
+        <>
+          {cars.map(car => (
+            <CarItem key={car.id} car={car} />
+          ))}
+        </>
+      ) : (
+        <>There are no results...</>
+      )}
     </div>
   );
 };
