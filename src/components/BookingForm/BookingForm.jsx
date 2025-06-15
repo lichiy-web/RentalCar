@@ -1,54 +1,74 @@
-import { ErrorMessage, Field, Formik } from 'formik';
+import { ErrorMessage, Field, Formik, Form } from 'formik';
 import css from './BookingForm.module.css';
-import { Form } from 'react-router-dom';
+import 'react-datepicker/dist/react-datepicker.css';
 import DatePicker from 'react-datepicker';
-import { useState } from 'react';
 import toast from 'react-hot-toast';
+import * as Yup from 'yup';
+import clsx from 'clsx';
 
 const formConfig = [
-  { fieldName: 'name', initialValue: '', type: 'text', placeholder: 'Name*' },
+  { name: 'name', initialValue: '', type: 'text', placeholder: 'Name*' },
   {
-    fieldName: 'email',
+    name: 'email',
     initialValue: '',
     type: 'email',
     placeholder: 'Email*',
   },
   {
-    fieldName: 'date',
-    initialValue: new Date(),
+    name: 'date',
+    initialValue: '',
     type: 'date',
     placeholder: 'Booking Date',
   },
   {
-    fieldName: 'comment',
+    name: 'comment',
     initialValue: '',
     type: 'textarea',
     placeholder: 'Comment',
   },
 ];
 
-const initialValue = 
+const initialValues = formConfig.reduce((init, { name, initialValue }) => {
+  init[name] = initialValue;
+  return init;
+}, {});
 
-const DatePickerField = props => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
+const bookingFormSchema = Yup.object().shape({
+  name: Yup.string().required(),
+  email: Yup.string().email().required(),
+  date: Yup.date(),
+  comment: Yup.string().max(128),
+});
+
+console.log({ initialValues });
+
+const DatePickerField = ({ field, form, placeholder, ...props }) => {
+  console.log('In DatePicker!', { field, form, props });
   return (
-    <DatePicker
-      selected={selectedDate}
-      onChange={date => setSelectedDate(date)}
-      {...props}
-    />
+    <div className="datePickerContainer">
+      <DatePicker
+        selected={field.value}
+        placeholderText={placeholder}
+        dateFormat="dd.MM.yyyy"
+        onChange={date => {
+          console.log({ name: field.name, date });
+          form.setFieldValue(field.name, date);
+        }}
+      />
+    </div>
   );
 };
 
-const fieldItem = ({ name, type, title, placeholder = '', ...props }) => {
+const FieldItem = ({ name, type, title, placeholder = '', ...props }) => {
   return (
     <label className={css.fieldItem}>
-      <span className={css.fieldTitle}>{title}</span>
+      <div className={css.fieldTitle}>{title}</div>
       {type === 'date' ? (
-        <DatePickerField
+        <Field
           className={css.field}
           name={name}
-          placeholderText={placeholder}
+          placeholder={placeholder}
+          component={DatePickerField}
           {...props}
         />
       ) : (
@@ -60,35 +80,39 @@ const fieldItem = ({ name, type, title, placeholder = '', ...props }) => {
           {...props}
         />
       )}
-      <ErrorMessage className={css.fieldErrorMessage} name={name} />
+      <ErrorMessage
+        className={css.fieldErrorMessage}
+        name={name}
+        component="div"
+      />
     </label>
   );
 };
 
-const handleSubmit = (values, actions) => {
-  console.log('In BookingFrom', { values });
-  toast(values.toString());
+const handleSubmit = ({ name, email, date, comment }, actions) => {
+  console.log('In BookingFrom', { name, email, date, comment });
+  toast(
+    `Thank you. ${name} for booking car at ${date}! \n Details has just sent to your email: ${email}. Check it out. \n We'll count yor note "${comment}."`
+  );
   actions.resetForm();
 };
 
 const BookingForm = props => {
   return (
     <div className={css.bookingFromContainer} {...props}>
-      <h2>Booking Form</h2>
-      <Formik onSubmit={handleSubmit}>
+      <h2 className={css.bookingFormTitle}>Booking Form</h2>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={bookingFormSchema}
+        onSubmit={handleSubmit}
+      >
         <Form>
-          <fieldItem />
-          <label className={css.fieldItem}>
-            <span className={css.fieldTitle}></span>
-            <Field
-              className={css.field}
-              name="name"
-              type="text"
-              placeholder="Name*"
-            />
-            <ErrorMessage className={css.fieldErrorMessage} name="name" />
-          </label>
-          <button className={css.submitBtn} type="submit" />
+          {formConfig.map(field => (
+            <FieldItem key={field.name} {...field} />
+          ))}
+          <button className={clsx(css.submitBtn, 'button')} type="submit">
+            Send
+          </button>
         </Form>
       </Formik>
     </div>

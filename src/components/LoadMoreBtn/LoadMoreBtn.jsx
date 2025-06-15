@@ -5,6 +5,7 @@ import {
   selectPaginationData,
 } from '../../redux/catalog/selectors';
 import { setPage } from '../../redux/catalog/slice';
+import clsx from 'clsx';
 
 const LoadMoreBtn = () => {
   const isLoading = useSelector(selectIsLoading);
@@ -18,7 +19,7 @@ const LoadMoreBtn = () => {
     hasNextPage && (
       <button
         type="button"
-        className={css.loadMoreBtn}
+        className={clsx(css.loadMoreBtn, 'button')}
         onClick={handleLoadMore}
       >
         {isLoading ? 'Loading...' : 'Load More'}

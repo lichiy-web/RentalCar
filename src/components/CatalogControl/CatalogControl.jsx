@@ -9,6 +9,7 @@ import { selectFilters } from '../../redux/filters/selectors';
 import PriceSelect from '../PriceSelect/PriceSelect';
 import MileageField from '../MileageField/MileageField';
 import { formatInput } from '../../utilits/utilits';
+import clsx from 'clsx';
 
 const catalogFormSchema = Yup.object().shape({
   brand: Yup.object()
@@ -62,7 +63,7 @@ const CatalogControl = () => {
           <MileageField />
         </label>
 
-        <button type="submit" className={css.submitBtn}>
+        <button type="submit" className={clsx(css.submitBtn, 'button')}>
           Search
         </button>
       </Form>

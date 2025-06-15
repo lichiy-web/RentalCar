@@ -14,6 +14,7 @@ import {
   MapPointerIcon,
 } from '../Icon/Icon';
 import { capitalize, mileageFormat, parseAddress } from '../../utilits/utilits';
+import BookingForm from '../BookingForm/BookingForm';
 
 const CarTab = () => {
   const { carId } = useParams();
@@ -52,9 +53,7 @@ const CarTab = () => {
     <div className={css.carTabContainer}>
       <div className={clsx(css.column, css.left)}>
         <img className={css.carImg} src={img} alt="Car Photo" />
-        <div className={css.bookingForm}>
-          <h2 className={css.bookingFormTitle}>Booking Form</h2>
-        </div>
+        <BookingForm />
       </div>
 
       <div className={clsx(css.column, css.right)}>

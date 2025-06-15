@@ -20,7 +20,7 @@ const FormattedField = ({ name, formatInput, ...props }) => {
           />
         )}
       </Field>
-      <ErrorMessage className={css.errorMessage} name={name} component="span" />
+      <ErrorMessage className={css.errorMessage} name={name} component="div" />
     </div>
   );
 };
