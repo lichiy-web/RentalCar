@@ -8,18 +8,17 @@
     color: var(--black);
     font-family: var(--font-family);
     min-height: calc(100vh - 4.25rem) ;
-
+    
     /* border: 1px solid yellowgreen; */
 }
 
-/* .column {
-} */
+.column {
+    display: flex;
+    flex-direction: column;
+}
 
 /* .left {
     border: 1px solid red;
-}
-.right {
-    border: 1px solid blue;
 } */
 
 .carImg {
@@ -28,6 +27,17 @@
     object-fit: cover;
     object-position: center;
     border-radius: 19px;
+}
+
+.right {
+    gap: 4.25rem;
+    /* border: 1px solid blue; */
+}
+
+.carAdditionalInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 6.875rem;
 }
 
 /* .details {
@@ -46,15 +56,50 @@
     border: 1px solid salmon;
 } */
 
-.detailsRow,
-.conditionRow,
-.specificationRow,
-.functionalitiesRow {
+.row {
     display: flex;
-    gap: .2rem
+    align-items: center;
+    gap: .5rem;
+    margin-top: 1rem;
+}
+
+.detailsTitle {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.33333;
+}
+
+.location {
+    font-weight: 500;
+    line-height: 1.25;
+    margin-top: .5rem;
+}
+
+.mileage {
+    margin-left: 1rem;    
+}
+
+.rentalPrice {
+    margin-top: 1rem;
+    color: var(--button);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.33333;
+}
+
+.description {
+    margin-top: 2rem;
+    font-weight: 500;
+    line-height: 1.25;
 }
 
 .icon {
-    width: .75rem;
+    width: 1rem;
     height: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.subTitle {
+    margin: 0 0 1.25rem 0;
 }

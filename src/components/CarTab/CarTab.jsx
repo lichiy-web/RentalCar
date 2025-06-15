@@ -58,70 +58,71 @@ const CarTab = () => {
       </div>
 
       <div className={clsx(css.column, css.right)}>
-        <div className={css.carInfo}>
+        <div className={css.carMainInfo}>
           <div className={css.details}>
-            <h1 className={clsx(css.detailsRow)}>
+            <h1 className={clsx(css.row, css.detailsTitle)}>
               {brand} {model}, {year}
             </h1>
-            <div className={clsx(css.detailsRow)}>
+            <div className={clsx(css.row, css.location)}>
               <MapPointerIcon className={css.icon} />
               <span>{city},</span>
               <span>{country}</span>
-              <span>Mileage: {mileageFormat(mileage)}</span>
+              <span className={css.mileage}>
+                Mileage: {mileageFormat(mileage)}
+              </span>
             </div>
-            <div className={clsx(css.detailsRow, css.rentalPrice)}>
-              ${rentalPrice}
-            </div>
-            <div className={clsx(css.detailsRow, css.description)}>
-              {description}
-            </div>
+            <div className={clsx(css.row, css.rentalPrice)}>${rentalPrice}</div>
+            <div className={clsx(css.row, css.description)}>{description}</div>
           </div>
+        </div>
+
+        <div className={css.carAdditionalInfo}>
           <div className={css.rentalConditions}>
-            <h2 className={css.rentalConditionsTitle}>Rental Conditions:</h2>
+            <h2 className={(css.row, css.subTitle)}>Rental Conditions:</h2>
             {rentalConditions.map((condition, id) => (
-              <div key={id} className={css.conditionRow}>
+              <div key={id} className={css.row}>
                 <CheckCircleIcon className={css.icon} />
-                {condition}
+                <span>{condition}</span>
               </div>
             ))}
           </div>
           <div className={css.carSpecifications}>
-            <h2 className={clsx(css.specificationRow)}>Car Specifications:</h2>
-            <div className={clsx(css.specificationRow)}>
+            <h2 className={clsx(css.row, css.subTitle)}>Car Specifications:</h2>
+            <div className={clsx(css.row)}>
               <CalendarIcon className={css.icon} />
               <span>Year:</span>
               <span>{year}</span>
             </div>
-            <div className={clsx(css.specificationRow)}>
+            <div className={clsx(css.row)}>
               <CarIcon className={css.icon} />
               <span>Type:</span>
               <span>{capitalize(type)}</span>
             </div>
-            <div className={clsx(css.specificationRow)}>
+            <div className={clsx(css.row)}>
               <FuelPumpIcon className={css.icon} />
               <span>Fuel Consumption:</span>
               <span>{fuelConsumption}</span>
             </div>
-            <div className={clsx(css.specificationRow)}>
+            <div className={clsx(css.row)}>
               <GearIcon className={css.icon} />
               <span>Engine Size:</span>
               <span>{engineSize}</span>
             </div>
           </div>
           <div className={css.accessoritiesFunctionalities}>
-            <h2 className={css.functionalitiesRow}>
+            <h2 className={(css.row, css.subTitle)}>
               Accessories and functionalities:
             </h2>
             {accessories.map((accessory, id) => (
-              <div key={id} className={css.functionalitiesRow}>
+              <div key={id} className={css.row}>
                 <CheckCircleIcon className={css.icon} />
-                {accessory}
+                <span>{accessory}</span>
               </div>
             ))}
             {functionalities.map((functionality, id) => (
-              <div key={id} className={css.functionalitiesRow}>
+              <div key={id} className={css.row}>
                 <CheckCircleIcon className={css.icon} />
-                {functionality}
+                <span>{functionality}</span>
               </div>
             ))}
           </div>
