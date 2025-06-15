@@ -13,7 +13,12 @@ import {
   GearIcon,
   MapPointerIcon,
 } from '../Icon/Icon';
-import { capitalize, mileageFormat, parseAddress } from '../../utilits/utilits';
+import {
+  capitalize,
+  extractOrderId,
+  mileageFormat,
+  parseAddress,
+} from '../../utilits/utilits';
 import BookingForm from '../BookingForm/BookingForm';
 
 const CarTab = () => {
@@ -47,6 +52,7 @@ const CarTab = () => {
   } = car;
 
   const { city, country } = parseAddress(address);
+  const orderId = extractOrderId(img);
 
   return (
     <div className={css.carTabContainer}>
@@ -60,7 +66,9 @@ const CarTab = () => {
           <div className={css.details}>
             <h1 className={clsx(css.row, css.detailsTitle)}>
               {brand} {model}, {year}
+              <span className={css.orderId}>Id: {orderId}</span>
             </h1>
+
             <div className={clsx(css.row, css.location)}>
               <MapPointerIcon className={css.icon} />
               <span>{city},</span>

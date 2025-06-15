@@ -1,7 +1,15 @@
 export const isDefined = value => value !== null && value !== undefined;
 
+/**
+ *
+ * @param {object} queryParams - Object `( type: {[paramName: string]: value: any} )` contents a parameter set for http request.
+ * @param {object} substitution - Object `( type: {[paramName: string]: substitutionName: string} )` that allow to replace a human understendable query parameter name with its real allias from api.
+ * @returns {string} a string with url query parameters
+ */
 export const createQuery = (queryParams = {}, substitution = {}) => {
+  //To iterate all the query parameters
   const query = Object.entries(queryParams).reduce((q, [param, value]) => {
+    //If there is a substitution for this parameter replace its name
     param = Object.keys(substitution).includes(param)
       ? substitution[param]
       : param;
@@ -61,3 +69,5 @@ export const mileageFormat = mileage =>
 
 export const capitalize = str =>
   (str = str.trim()) && str[0].toUpperCase() + str.substring(1).toLowerCase();
+
+export const extractOrderId = img => img.match(/\d+(?=-ai.jpg)/)[0];

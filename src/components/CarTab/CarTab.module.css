@@ -48,6 +48,14 @@
     font-weight: 600;
     font-size: 1.5rem;
     line-height: 1.33333;
+    align-items: baseline;
+    gap: 1rem
+}
+.orderId {
+    font-size: 1rem;
+    color: var(--select-options-color);
+    font-weight: 500;
+    line-height: 1.25;
 }
 
 .location {
@@ -59,6 +67,7 @@
 .mileage {
     margin-left: 1rem;    
 }
+
 
 .rentalPrice {
     margin-top: 1rem;
