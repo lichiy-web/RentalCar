@@ -13,6 +13,7 @@ const DatePickerField = ({ field, form, placeholder, ...props }) => {
       placeholderText={placeholder}
       isClearable
       closeOnSelect
+      popperPlacement="bottom-start"
       open={console.log({ isOpen }) || isOpen}
       dateFormat="dd.MM.yyyy"
       onChange={date => {
@@ -26,7 +27,7 @@ const DatePickerField = ({ field, form, placeholder, ...props }) => {
       }}
       onInputClick={() => {
         if (justSelected) {
-          setJustSelected(false); // сбрасываем, не открываем
+          setJustSelected(false);
           return;
         }
         setIsOpen(true);
