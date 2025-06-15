@@ -23,7 +23,6 @@ const options = Array(totalItems)
   .fill(0)
   .map((_, i) => createOption(priceFrom + i * priceStep));
 const defaultValue = { value: '', label: 'Choose a price' };
-console.log({ options });
 
 const customStyles = {
   option: (provided, state) => ({

@@ -9,8 +9,7 @@ import { formConfig } from './formConfig';
 const initialValues = createInitialValues(formConfig);
 const bookingFormSchema = createSchema(formConfig);
 
-const handleSubmit = ({ name, email, date, comment }, actions) => {
-  console.log('In BookingFrom', { name, email, date, comment });
+const handleSubmit = ({ name, email, date }, actions) => {
   toast(
     `Thank you. ${name} for booking the car${
       date && ' at ' + Intl.DateTimeFormat('uk-UA').format(date)

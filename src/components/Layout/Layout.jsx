@@ -14,7 +14,6 @@ const Layout = () => {
   const isPageLoaded = useSelector(selectisIsPageLoaded);
   const dispatch = useDispatch();
   const error = useSelector(selectError);
-  console.log({ isLoading, isPageLoaded });
 
   useEffect(() => {
     if (document.readyState === 'complete') {

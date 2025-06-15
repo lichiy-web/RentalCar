@@ -32,7 +32,6 @@ const slice = createSlice({
   initialState,
   reducers: {
     resetCatalogControls: state => {
-      console.log('Reset catalog!');
       return { ...initialState, brands: state.brands };
     },
     setPage: (state, { payload: page }) => {
@@ -48,9 +47,6 @@ const slice = createSlice({
           state,
           { payload: { cars, page, perPage, totalCars, totalPages } }
         ) => {
-          console.log({
-            catalog: { cars, page, perPage, totalCars, totalPages },
-          });
           state.isLoading = false;
           state.error = null;
           state.cars = state.cars.concat(cars);
@@ -64,7 +60,6 @@ const slice = createSlice({
       .addCase(fetchCars.rejected, handleReject)
       .addCase(fetchBrands.pending, handlePending)
       .addCase(fetchBrands.fulfilled, (state, { payload: brands }) => {
-        console.log({ brands });
         state.isLoading = false;
         state.error = null;
         state.brands = brands;
@@ -72,7 +67,6 @@ const slice = createSlice({
       .addCase(fetchBrands.rejected, handleReject)
       .addCase(fetchCar.pending, handlePending)
       .addCase(fetchCar.fulfilled, (state, { payload: car }) => {
-        console.log({ car });
         state.isLoading = false;
         state.error = null;
         state.car = car;

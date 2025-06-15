@@ -19,7 +19,6 @@ const CarTable = () => {
   });
 
   const cars = useSelector(selectCars);
-  console.log('CarTable', { cars });
   return (
     <div className={css.carTableContainer}>
       {cars.map(car => (

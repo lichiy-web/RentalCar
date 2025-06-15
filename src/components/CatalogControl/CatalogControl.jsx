@@ -34,7 +34,6 @@ const CatalogControl = () => {
   let initialValues = { ...filters };
   initialValues.minMileage = formatInput('From')(filters.minMileage);
   initialValues.maxMileage = formatInput('To')(filters.maxMileage);
-  console.log({ filters, initialValues });
 
   const dispatch = useDispatch();
   const handleSubmit = filters => {

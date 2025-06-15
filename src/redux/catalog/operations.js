@@ -6,7 +6,7 @@ export const fetchCars = createAsyncThunk(
   'cars/fetchAll',
   async ({ signal, ...queryParams } = {}, thunkAPI) => {
     const query = createQuery(queryParams, substitution);
-    console.log({ query });
+
     return appApi
       .get(`/cars${query}`, { signal })
       .then(({ data }) => {

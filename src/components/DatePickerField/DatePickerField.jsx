@@ -14,7 +14,7 @@ const DatePickerField = ({ field, form, placeholder, ...props }) => {
       isClearable
       closeOnSelect
       popperPlacement="bottom-start"
-      open={console.log({ isOpen }) || isOpen}
+      open={isOpen}
       dateFormat="dd.MM.yyyy"
       onChange={date => {
         form.setFieldValue(name, date);

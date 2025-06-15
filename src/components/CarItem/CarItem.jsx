@@ -5,13 +5,12 @@ import FavoriteChevron from '../FavoriteChevron/FavoriteChevron';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFavorite } from '../../redux/app/selectors';
 import { toggleFavoriteCar } from '../../redux/app/slice';
-import { mileageFormat } from '../../utilits/utilits';
+import { mileageFormat, parseAddress } from '../../utilits/utilits';
 
 const CarItem = ({ car }) => {
   const favoriteCars = useSelector(selectFavorite);
   const dispatch = useDispatch();
   if (!car) return;
-  // console.log('In CarItem: ', car);
   const {
     id,
     year,
@@ -19,19 +18,13 @@ const CarItem = ({ car }) => {
     model,
     type,
     img,
-    // description,
-    // fuelConsumption,
-    // engineSize,
-    // accessories,
-    // functionalities,
     rentalPrice,
     rentalCompany,
     address,
-    // rentalConditions,
     mileage,
   } = car;
   // eslint-disable-next-line no-unused-vars
-  const [street, city, country] = address.split(', ');
+  const { city, country } = parseAddress(address);
   const formatedMileage = mileageFormat(mileage);
 
   const isFavorite = favoriteCars.includes(id);

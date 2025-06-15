@@ -13,7 +13,7 @@ const CatalogTab = () => {
   const filters = useSelector(selectFilters);
   const { page, perPage } = useSelector(selectPaginationData);
 
-  // Reset catalog state before each page load
+  // Reset catalog state before every page load
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(resetCatalogControls());

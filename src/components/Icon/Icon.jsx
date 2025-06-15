@@ -61,7 +61,6 @@ export const GearIcon = props => {
 };
 
 export const FavoriteIcon = props => {
-  console.log('In FavoriteIcon: ', props);
   return (
     <div className={css.iconContainer} {...props}>
       <svg className={css.iconSvg} fill="none" viewBox="0 0 16 15">
@@ -72,7 +71,6 @@ export const FavoriteIcon = props => {
 };
 
 export const FavoriteCheckedIcon = props => {
-  console.log('In FavoriteCheckedIcon: ', props);
   return (
     <div className={css.iconContainer} {...props}>
       <svg className={css.iconSvg} fill="none" viewBox="0 0 16 15">
