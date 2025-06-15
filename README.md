@@ -1,8 +1,21 @@
-# React + Vite
+# RentalCar App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Rental Car app will help you choose a car to rent in the city you need at
+the time you need, and at a very low price.
+[Here](https://rental-car-nine-pi.vercel.app/) you can start getting to know the
+web application. On the
+[catalog page](https://rental-car-nine-pi.vercel.app/catalog) you can:
 
-Currently, two official plugins are available:
+- explore car available to rent
+- load more and more cars if you need
+- filter result by brand, price and mileage range
+- follow the link
+  [Read More](https://rental-car-nine-pi.vercel.app/catalog/e7ffb97e-9fe4-44f1-ae73-34e308afa82d)
+  to the page with vehicle information details, where you can book the car you
+  have chosen.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  ***
+
+  Author: Yevhen Lykhosherstov </br> Email: lichiy.web.dvlp@gmail.com
+
+  ***
