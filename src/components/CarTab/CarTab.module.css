@@ -89,6 +89,11 @@
     display: flex;
     align-items: center;
 }
+.mapPointerIcon {
+    width: .75rem;
+    /* display: flex; */
+}
+
 
 .subTitle {
     margin: 0 0 1.25rem 0;

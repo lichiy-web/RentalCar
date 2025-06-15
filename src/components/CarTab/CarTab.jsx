@@ -70,7 +70,7 @@ const CarTab = () => {
             </h1>
 
             <div className={clsx(css.row, css.location)}>
-              <MapPointerIcon className={css.icon} />
+              <MapPointerIcon className={clsx(css.icon, css.mapPointerIcon)} />
               <span>{city},</span>
               <span>{country}</span>
               <span className={css.mileage}>
