@@ -58,7 +58,7 @@ const CarTab = () => {
     <div className={css.carTabContainer}>
       <div className={clsx(css.column, css.left)}>
         <img className={css.carImg} src={img} alt="Car Photo" />
-        <BookingForm />
+        <BookingForm className={css.bookingForm} />
       </div>
 
       <div className={clsx(css.column, css.right)}>
@@ -133,6 +133,7 @@ const CarTab = () => {
             ))}
           </div>
         </div>
+        <BookingForm className={css.bookingFormTabletMob} />
       </div>
     </div>
   );
