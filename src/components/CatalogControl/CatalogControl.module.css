@@ -9,7 +9,6 @@
 .selectWrapper {
     display: flex;
     justify-content: center;
-    /* width: max-content; */
     gap: 1rem;
 }
 
@@ -18,7 +17,6 @@
     flex-direction: column;
     align-items: left;
     gap: .5rem;
-    /* width: 100% */
 }
 
 .inputTitle {
@@ -39,14 +37,12 @@
     .catalogControl {
         flex-direction: column;
         align-items: center;
-        /* width: 100%; */
     }
     .selectWrapper {
         width: 100%;
     }
-    .inputItem {
-        /* max-width: 80%; */
-    }
+    /* .inputItem {
+    } */
     .inputMileage {
         align-items: center;
     }

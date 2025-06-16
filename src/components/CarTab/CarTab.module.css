@@ -143,12 +143,12 @@
         font-size: 12px;
     }
     .carTabContainer {
-        padding: 2rem 2rem;
+        padding: 2rem 1.5rem;
     }
     .carImg {
         width: 100%;
     }
     .bookingFormTabletMob {
-        padding: .5rem
+        padding: 1rem;
     }
 }
