@@ -9,6 +9,11 @@
   --button: #3470FF;
   --button-hover: #0B44CD;
   --header-back: #f2f4f7;
+
+  color-scheme: light;
+  background-color: var(--white);
+  color: var(--black);
+
 }
 
 :root {
