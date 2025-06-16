@@ -1,5 +1,8 @@
 import * as Yup from 'yup';
 
+/**
+ * The config object for creating initialValues, validationSchema and Field componets in Formik Form
+ */
 export const formConfig = [
   {
     name: 'name',

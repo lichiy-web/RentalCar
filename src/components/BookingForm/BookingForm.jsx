@@ -36,11 +36,11 @@ const BookingForm = props => {
           {formConfig.map(field => (
             <FieldItem
               key={field.name}
-              className={clsx(css.itemContainer, css[`${field.name}Item`])}
+              className={clsx(css.itemContainer, css[`${field.name}Item`])} // classes that will be asigned to the field container div
               classes={{
-                label: clsx(css.label, css[`${field.name}Label`]),
-                field: clsx(css.field, css[`${field.name}Field`]),
-                error: clsx(css.error, css[`${field.name}Error`]),
+                label: clsx(css.label, css[`${field.name}Label`]), // classes that will be asigned to the div.label
+                field: clsx(css.field, css[`${field.name}Field`]), // classes that will be asigned to the Field components
+                error: clsx(css.error, css[`${field.name}Error`]), // classes that will be asigned to the div.error
               }}
               {...field}
             />

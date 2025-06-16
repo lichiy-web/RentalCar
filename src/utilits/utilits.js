@@ -2,8 +2,8 @@ export const isDefined = value => value !== null && value !== undefined;
 
 /**
  *
- * @param {object} queryParams - Object `( type: {[paramName: string]: value: any} )` contents a parameter set for http request.
- * @param {object} substitution - Object `( type: {[paramName: string]: substitutionName: string} )` that allow to replace a human understendable query parameter name with its real allias from api.
+ * @param {Object} queryParams - Object `( type: {[paramName: string]: value: any} )` contents a parameter set for http request.
+ * @param {Object} substitution - Object `( type: {[paramName: string]: substitutionName: string} )` that allow to replace a human understendable query parameter name with its real allias from api.
  * @returns {string} a string with url query parameters
  */
 export const createQuery = (queryParams = {}, substitution = {}) => {
@@ -37,11 +37,18 @@ export const hasType = (value, types) => {
 };
 
 /**
+ * The pare of raw value extracted from react-select component and formatted values for the react-select component
+ * @typedef {Object} RawAndFormattedSelectPare
+ * @property {(string | number | undefined | null)} rawValue - a raw value extracted from the Field component's input
+ * @property {string} fromattedValue - a formated value for the Field component's input
+ */
+
+/**
  *
- * @param {string | number | null | undefined} value - Input value from the MileageSelect fields.
- * @param {string | null | undefined} prefix - Defines range type, for instance: "From" or "To".
- * @param {string | undefined} locale - The international locale according to ISO standard.
- * @returns { {rawValue: string | number | null, formattedValue: string} } The pare of raw and formatted values for the MileageSelect component in the following format: "[prefix] 1 5000".
+ * @param {(string | number | null | undefined)} value - Input value from the MileageSelect fields.
+ * @param {(string | null | undefined)} prefix - Defines range type, for instance: "From" or "To".
+ * @param {(string | undefined)} locale - The international locale according to ISO standard.
+ * @returns { RawAndFormattedSelectPare } The pare of raw and formatted values for the MileageSelect component in the following format: "[prefix] 1 5000".
  */
 export const formatValue = (value, prefix, locale = 'en-US') => {
   if (!value) return { rawValue: null, formattedValue: prefix };
@@ -77,14 +84,14 @@ export const unformatInput = value => formatValue(value).rawValue;
 /**
  *
  * @param {string | number} value - A raw value for the react-select components
- * @returns {object: OptionType} An Option object of the react-select component
+ * @returns {Object: OptionType} An Option object of the react-select component
  */
 export const createOption = value => ({ value, label: String(value) });
 
 /**
  * Reviel the adress parts from address string *
  * @param {string} addressStr
- * @returns {object}
+ * @returns {Object}
  */
 export const parseAddress = addressStr => {
   const [street, city, country] = addressStr.split(', ');
