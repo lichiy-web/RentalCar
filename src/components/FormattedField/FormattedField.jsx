@@ -10,12 +10,11 @@ const FormattedField = ({ name, formatInput, ...props }) => {
   return (
     <div className={css.formattedFieldContainer}>
       <Field name={name}>
-        {({ field, form, meta }) => (
+        {({ field, form }) => (
           <input
             id={name}
             {...field}
             {...props}
-            aria-invalid={meta.error && meta.touched ? 'true' : 'false'}
             onChange={e => handleChange(e, name, form.setFieldValue)}
           />
         )}

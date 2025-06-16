@@ -28,3 +28,17 @@
     width: 1px;
     background-color: var(--select-scroll);
 }
+
+@media only screen and (max-width: 1199px) {
+    .mileageFieldContainer {
+        justify-content: center;
+        /* align-items: center; */
+        width: max-content;
+    }
+    
+    .mileageField {
+        align-items: center;
+        width: 100%;
+    }
+
+}

@@ -49,15 +49,17 @@ const CatalogControl = () => {
       enableReinitialize
     >
       <Form className={css.catalogControl}>
-        <label className={css.inputItem}>
-          <div className={css.inputTitle}>Car brand</div>
-          <BrandSelect name="brand" />
-        </label>
-        <label className={css.inputItem}>
-          <div className={css.inputTitle}>Price/ 1 hour</div>
-          <PriceSelect name="rentalPrice" />
-        </label>
-        <label className={css.inputItem}>
+        <div className={css.selectWrapper}>
+          <label className={clsx(css.inputItem, css.brandSelect)}>
+            <div className={css.inputTitle}>Car brand</div>
+            <BrandSelect name="brand" />
+          </label>
+          <label className={clsx(css.inputItem, css.priceSelect)}>
+            <div className={css.inputTitle}>Price/ 1 hour</div>
+            <PriceSelect name="rentalPrice" />
+          </label>
+        </div>
+        <label className={clsx(css.inputItem, css.inputMileage)}>
           <div className={css.inputTitle}>Сar mileage / km</div>
           <MileageField />
         </label>

@@ -34,7 +34,7 @@ const customStyles = {
   }),
   control: provided => ({
     ...provided,
-    width: '12.75em',
+    width: '12.75rem',
     fontFamily: 'var(--font-family)',
     fontWeight: 500,
     color: 'var(--black)',

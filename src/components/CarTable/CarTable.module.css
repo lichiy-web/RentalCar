@@ -14,3 +14,20 @@
     display: flex;
     justify-content: center;
 }
+
+@media only screen and (max-width: 1199px) {
+    .carTableContainer {
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+        grid-column-gap: 1.5rem;
+        grid-row-gap: 2rem;  
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .carTableContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+}
