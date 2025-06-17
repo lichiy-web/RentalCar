@@ -21,6 +21,7 @@ const LoadMoreBtn = () => {
         type="button"
         className={clsx(css.loadMoreBtn, 'button')}
         onClick={handleLoadMore}
+        disabled={isLoading}
       >
         {isLoading ? 'Loading...' : 'Load More'}
       </button>
