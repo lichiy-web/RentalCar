@@ -40,7 +40,7 @@ const CarItem = ({ car }) => {
       />
       <img src={img} alt="Car Photo" className={css.carImg} />
       <div className={css.mainInfo}>
-        <p className={clsx(css.mainInfoItem, css.modelInfo)}>
+        <h2 className={clsx(css.mainInfoItem, css.modelInfo)}>
           <span className={clsx(css.modelInfoItem, css.brand)}>
             {brand + ' '}
           </span>
@@ -48,7 +48,7 @@ const CarItem = ({ car }) => {
           <span className={clsx(css.modelInfoItem, css.year)}>
             {' ' + year}
           </span>
-        </p>
+        </h2>
         <p className={clsx(css.mainInfoItem, css.rentalPrice)}>
           {'$' + rentalPrice}
         </p>

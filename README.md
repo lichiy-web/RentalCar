@@ -12,7 +12,16 @@ web application. On the
 - follow the link
   [Read More](https://rental-car-nine-pi.vercel.app/catalog/e7ffb97e-9fe4-44f1-ae73-34e308afa82d)
   to the page with vehicle information details, where you can book the car you
-  have chosen.
+  have chosen. </br></br> Technology stack:
+
+  - HTML5, CSS3
+  - JavaScript
+  - React, React Router DOM,
+  - Redux, Redux Toolkit, Redux Persist
+  - Formik, Yup
+  - React Select, React DatePicker
+  - Axios, REST API
+  - Vite
 
   ***
 
