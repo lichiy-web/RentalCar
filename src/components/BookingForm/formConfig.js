@@ -24,11 +24,12 @@ export const formConfig = [
       .required('Email is a required field'),
   },
   {
-    name: 'date',
-    initialValue: null,
+    name: 'dateRange',
+    initialValue: [null, null],
     type: 'date',
     placeholder: 'Booking Date',
-    validation: Yup.date().nullable(),
+    // validation: Yup.date().nullable(),
+    validation: Yup.array().of(Yup.date()),
   },
   {
     name: 'comment',

@@ -29,7 +29,7 @@ export const createQuery = (queryParams = {}, substitution = {}) => {
  *
  * @param {*} value - A value, which type is needed to check
  * @param {string[]} types - An array of javascrpipt types
- * @returns {boolean | null} True if value is one of the passed types and false otherwise.
+ * @returns {boolean | null} True if value is one of the passed types and false otherwise. Null if types isn't an array.
  */
 export const hasType = (value, types) => {
   const valueType = value === null ? 'null' : typeof value;

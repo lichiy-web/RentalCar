@@ -3,21 +3,30 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const DatePickerField = ({ field, form, placeholder, ...props }) => {
+  // console.log()
   const [isOpen, setIsOpen] = useState(false);
   const [justSelected, setJustSelected] = useState(false);
-  const { name, value } = field;
+  const {
+    name,
+    value: [startDate, endDate],
+  } = field;
+  const today = new Date();
   return (
     <DatePicker
       {...props}
-      selected={value || null}
+      // selected={value || [null, null]}
       placeholderText={placeholder}
       isClearable
       closeOnSelect
       popperPlacement="bottom-start"
       open={isOpen}
       dateFormat="dd.MM.yyyy"
-      onChange={date => {
-        form.setFieldValue(name, date);
+      startDate={startDate}
+      endDate={endDate}
+      selectsRange
+      minDate={today}
+      onChange={dateRange => {
+        form.setFieldValue(name, dateRange);
         setIsOpen(false);
       }}
       onClickOutside={() => setIsOpen(false)}
