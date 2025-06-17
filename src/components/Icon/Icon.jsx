@@ -62,21 +62,21 @@ export const GearIcon = props => {
 
 export const FavoriteIcon = props => {
   return (
-    <div className={css.iconContainer} {...props}>
+    <button className={css.iconContainer} {...props}>
       <svg className={css.iconSvg} fill="none" viewBox="0 0 16 15">
         <use href="/sprite.svg#icon-favorite"></use>
       </svg>
-    </div>
+    </button>
   );
 };
 
 export const FavoriteCheckedIcon = props => {
   return (
-    <div className={css.iconContainer} {...props}>
+    <button className={css.iconContainer} {...props}>
       <svg className={css.iconSvg} fill="none" viewBox="0 0 16 15">
         <use href="/sprite.svg#icon-favorite-checked"></use>
       </svg>
-    </div>
+    </button>
   );
 };
 

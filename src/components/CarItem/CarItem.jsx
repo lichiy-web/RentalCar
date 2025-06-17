@@ -23,7 +23,6 @@ const CarItem = ({ car }) => {
     address,
     mileage,
   } = car;
-  // eslint-disable-next-line no-unused-vars
   const { city, country } = parseAddress(address);
   const formatedMileage = mileageFormat(mileage);
 
