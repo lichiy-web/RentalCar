@@ -23,11 +23,11 @@
     text-align: center;
 }
 
-.link:hover {
+/* .link:hover {
     color: var(--button);
-}
+} */
 
 .link.active {
-    text-decoration: underline;
+    color: var(--button);
 }
 
