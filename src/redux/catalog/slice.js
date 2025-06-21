@@ -37,6 +37,9 @@ const slice = createSlice({
     setPage: (state, { payload: page }) => {
       state.paginationData.page = page;
     },
+    resetError: state => {
+      state.error = null;
+    },
   },
   extraReducers: builder => {
     builder
@@ -76,4 +79,4 @@ const slice = createSlice({
 });
 
 export const catalogReducer = slice.reducer;
-export const { resetCatalogControls, setPage } = slice.actions;
+export const { resetCatalogControls, setPage, resetError } = slice.actions;
