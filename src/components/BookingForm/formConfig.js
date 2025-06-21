@@ -29,7 +29,7 @@ export const formConfig = [
     type: 'date',
     placeholder: 'Booking Date',
     // validation: Yup.date().nullable(),
-    validation: Yup.array().of(Yup.date()),
+    validation: Yup.array().of(Yup.date().nullable()),
   },
   {
     name: 'comment',
