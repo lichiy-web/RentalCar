@@ -36,6 +36,6 @@ export const formConfig = [
     initialValue: '',
     type: 'textarea',
     placeholder: 'Comment',
-    validation: Yup.string().max(256, 'Comment must not eceed 256 characters'),
+    validation: Yup.string().max(256, 'Comment must not exceed 256 characters'),
   },
 ];
