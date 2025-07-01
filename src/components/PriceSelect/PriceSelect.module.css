@@ -1,3 +1,111 @@
-.brandSelectContainer * {
-    /* width: 12.75em; */
+/* === Control === */
+
+div.control {
+    width: 12.75rem;
+    font-family: var(--font-family);
+    font-weight: 500;
+    color: var(--black);
+    line-height: 1.25;
+    border-radius: .75rem;
+    height: 2.75rem;
+    background-color: var(--input-color);
+    border-color: transparent;
+    box-shadow: none;
+}
+
+div.control:hover {
+    border-color: transparent;
+    cursor: pointer;
+}
+
+/* === Option === */
+
+div.option {
+    background-color: var(--white);
+    color: var(--select-options-color);
+    font-family: var(--font-family);
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 0;
+    margin-bottom: .2rem;
+
+}
+
+div.option.focused,
+div.option.selected {
+    color: var(--black);
+}
+
+div.option:active {
+    background-color: var(--white);
+}
+
+div.option:hover {
+    cursor: pointer;
+    background-color: var(--white);
+    box-shadow: none;
+}
+
+/* === SingleValue === */
+
+div.singleValue {
+    font-family: var(--font-family);
+    font-weight: 500;
+    color: var(--black);
+}
+
+/* Placeholder: */
+
+div.placeholder {
+    color: var(--black);
+}
+
+/* Menu */
+
+div.menu {
+    border-radius: .75em;
+    padding: .875rem .5rem .875rem 1.125rem;
+    max-height: 11.77rem;
+    margin-top: .25rem;
+}
+
+/* MenuList */
+
+div.menuList {
+    gap: .5rem;
+    max-height: 10rem;
+    padding: 0,
+}
+
+div.menuList::-webkit-scrollbar {
+    width: .5rem;
+}
+
+div.menuList::-webkit-scrollbar-thumb {
+    background-color: var(--select-scroll);
+    border-radius: 4px;
+}
+
+/* IndicatorsContainer */
+
+div.indicatorsContainer {
+    padding-right: .75rem;
+}
+
+/* ValueContainer */
+
+div.valueContainer {
+    padding-left: 1rem;
+}
+
+/* IndicatorSeparator */
+
+span.indicatorSeparator {
+    display: none;
+}
+
+/* ClearIndicator */
+
+div.clearIndicator {
+    padding-right: 0;
 }
