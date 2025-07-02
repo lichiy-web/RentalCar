@@ -18,3 +18,9 @@
         padding: 1.5rem 2rem;
     }
 }
+
+@media only screen and (max-width: 512px) {
+    .header {
+        padding: 1.5rem 1rem;
+    }
+}

@@ -63,7 +63,7 @@
 }
 
 .commentField {
-    --vertival-paddings: .75rem;
+    --vertical-paddings: .75rem;
     --line-height: 1.25;
     --rows: 4;
     --font-size: 1rem;
@@ -71,8 +71,8 @@
     font-size: var(--font-size);
     line-height: var(--line-height);
     resize: none;
-    padding: var(--vertival-paddings) 1.5rem;
-    height: calc(var(--rows) * var(--font-size) * var(--line-height) + var(--vertival-paddings) * 2);
+    padding: var(--vertical-paddings) 1.5rem;
+    height: calc(var(--rows) * var(--font-size) * var(--line-height) + var(--vertical-paddings) * 2);
 }
 
 .error {
@@ -81,4 +81,13 @@
 
 .submitBtn {
     padding: .75rem 3.25rem;
+    margin-top: .5rem;
+}
+
+@media only screen and (max-width: 512px) {
+    .formHeader, 
+    .bookingForm,
+    .commentField {
+        font-size: .8rem;
+    }
 }

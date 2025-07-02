@@ -101,7 +101,7 @@
     margin: 0 0 1.25rem 0;
 }
 
-.bookingForm,
+.bookingFormDesktop,
 .bookingFormTabletMob {
     width: 100%;
     display: flex;
@@ -123,11 +123,12 @@
         flex-direction: column;
         width: 100%;
         align-items: center;
+        gap: 1.5rem;
     }
     .carImg {
         width: 80%;
     }
-    .bookingForm {
+    .bookingFormDesktop {
         display: none;
     }
     .bookingFormTabletMob {
@@ -139,16 +140,25 @@
 } 
 
 @media only screen and (max-width: 767px) {
-    body {
-        font-size: 12px;
-    }
     .carTabContainer {
         padding: 2rem 1.5rem;
-    }
+    } 
     .carImg {
         width: 100%;
     }
     .bookingFormTabletMob {
-        padding: 1rem;
+        padding: 2rem;
     }
+}
+
+@media only screen and (max-width: 512px) {
+    .carTabContainer {
+        font-size: .8rem;
+    }
+    .detailsTitle {
+        font-size: 1.2rem;
+    }
+    .bookingFormTabletMob {
+        padding: 1.5rem 1.2rem;
+    }    
 }

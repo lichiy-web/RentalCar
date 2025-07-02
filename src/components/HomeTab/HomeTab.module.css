@@ -5,7 +5,7 @@
     background-size: cover;
     background-position: center;
     margin: 0;
-    padding: 1em;
+    padding: 1rem;
     color: var(--white);
     font-family: var(--font-family);
     display: flex;
@@ -49,16 +49,35 @@
     margin-bottom: 1rem;
 }
 
+.description,
+.moto {
+    text-shadow: 0 0 10px var(--black);
+}
+
 
 h1 {
     margin: 0;
 }
 
-@media only screen and (max-width: 1199px) {
+@media only screen and (max-width: 767px) {
     .description {
-        font-size: 1rem;;
+        font-size: 1.2rem;;
     }
     .moto {
-        font-size: 2.5rem;
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-width: 512px) {
+    .homeTabContainer {
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+    .description {
+        font-size: .8rem;
+        ;
+    }
+    .moto {
+        font-size: 2rem;
     }
 }
