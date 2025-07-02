@@ -1,7 +1,8 @@
 .mileageFieldContainer {
     display: flex;
     height: 2.75rem;
-
+    width: 100%;
+    /* max-width: 26.5rem; */
     background-color: var(--input-color);
     border-radius: .75rem;
 
@@ -33,7 +34,7 @@
     .mileageFieldContainer {
         justify-content: center;
         /* align-items: center; */
-        width: max-content;
+        /* width: max-content; */
     }
     
     .mileageField {

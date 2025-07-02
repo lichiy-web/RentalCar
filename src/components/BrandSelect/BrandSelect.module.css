@@ -1,7 +1,12 @@
+.brandSelectContainer {
+    /* max-width: 12.75rem; */
+    /* width: calc(50% - .5rem); */
+    width: 100%;
+}
+
 /* === Control === */
 
 div.control {
-    width: 12.75rem;
     font-family: var(--font-family);
     font-weight: 500;
     color: var(--black);
