@@ -11,3 +11,9 @@
     color: red;
     width: 15rem;
 }
+
+@media only screen and (max-width: 512px) {
+    .formattedFieldContainer {
+        width: 100%;
+    }
+}

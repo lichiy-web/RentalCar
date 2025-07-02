@@ -2,10 +2,8 @@
     display: flex;
     height: 2.75rem;
     width: 100%;
-    /* max-width: 26.5rem; */
     background-color: var(--input-color);
     border-radius: .75rem;
-
 }
 
 .mileageField {
@@ -33,13 +31,26 @@
 @media only screen and (max-width: 1199px) {
     .mileageFieldContainer {
         justify-content: center;
-        /* align-items: center; */
-        /* width: max-content; */
-    }
-    
+    }    
     .mileageField {
         align-items: center;
         width: 100%;
     }
 
+}
+
+@media only screen and (max-width: 512px) {
+    .mileageFieldContainer {
+        flex-direction: column;
+        height: unset;   
+    }
+    .mileageSeparator {
+        width: unset;
+        height: 1px;
+    }
+    .mileageField {
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+        padding-right: .5rem;
+    }
 }

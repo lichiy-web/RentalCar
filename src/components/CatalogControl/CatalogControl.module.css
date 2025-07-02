@@ -28,8 +28,9 @@
 }
 
 .inputMileage {
-    max-width: 26.5rem;
-    flex-shrink: 1;
+    max-width: 25.5rem;
+    flex-basis: 0;
+    min-width: 0;
 }
 
 .inputTitle {
@@ -54,18 +55,30 @@
     .selectWrapper {
         width: 100%;
     }
-    /* .inputItem {
-    } */
     .inputMileage {
         align-items: center;
+        max-width: 26.5rem;
     }
     .brandSelect {
         align-items: end;
     }
+    .submitBtn {
+        margin-top: 1rem;
+    }
 }
 
 @media only screen and (max-width: 767px) {
-    .inputItem {
-            max-width: 100%;
-        }
 }
+
+@media only screen and (max-width: 512px) {
+        .selectWrapper {
+            flex-direction: column;
+        }
+        .brandSelect,
+        .priceSelect {
+            width: 100%;
+        }
+        .inputMileage {
+            width: 100%;
+        }
+    }
