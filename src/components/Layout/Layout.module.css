@@ -4,5 +4,5 @@
     margin: 0;
     color: var(--white);
     overflow: auto;
-    max-height: calc( 100vh - 4.25rem);
+    max-height: calc( 100dvh - 4.25rem);
 }
