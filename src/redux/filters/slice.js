@@ -5,7 +5,7 @@ const initialState = {
   brand: null,
   rentalPrice: null,
   minMileage: null,
-  maxMileage: undefined,
+  maxMileage: null,
 };
 
 const slice = createSlice({
@@ -26,8 +26,9 @@ const slice = createSlice({
         [name]: typeof value === 'string' ? value : { ...value },
       };
     },
+    resetFilter: () => initialState,
   },
 });
 
 export const filtersReducer = slice.reducer;
-export const { changeFilter, setFilter } = slice.actions;
+export const { changeFilter, setFilter, resetFilter } = slice.actions;

@@ -8,6 +8,7 @@ import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
 import { selectFilters } from '../../redux/filters/selectors';
 import { selectPaginationData } from '../../redux/catalog/selectors';
 import { resetCatalogControls } from '../../redux/catalog/slice';
+import { resetFilter } from '../../redux/filters/slice';
 
 const CatalogTab = () => {
   const filters = useSelector(selectFilters);
@@ -17,6 +18,7 @@ const CatalogTab = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(resetCatalogControls());
+    dispatch(resetFilter());
   }, [dispatch]);
 
   useEffect(() => {
