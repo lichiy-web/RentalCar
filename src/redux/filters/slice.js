@@ -21,7 +21,10 @@ const slice = createSlice({
       return Object.fromEntries(filters);
     },
     setFilter: (state, { payload: { name, value } }) => {
-      state[name] = typeof value === 'string' ? value : { ...value };
+      return {
+        ...state,
+        [name]: typeof value === 'string' ? value : { ...value },
+      };
     },
   },
 });
